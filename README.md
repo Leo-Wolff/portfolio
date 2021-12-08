@@ -19,11 +19,11 @@ Naast school hou ik mezelf ook continu bezig. Ik ben secretaris bij IAM Core, ik
 <details open>
  <summary><img src="images/isga-cover.png" alt="De homepagina van de website die ik hebt gemaakt voor het ISGA project."></summary>
  
- Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.Website/ (voor het project moesten we het specifiek voor het scherm van de iPhone 7/6/8  Plus coderen, daarom ziet het er alleen goed uit op die resolutie).
+ <strong>Link naar het eindresultaat:</strong> https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.Website/ (voor het project moesten we het specifiek voor het scherm van de iPhone 7/6/8  Plus coderen, daarom ziet het er alleen goed uit op die resolutie).
  
  ### Opdracht
- Periode: Jaar 1 Blok 1
-Vak: Project Individueel 1
+ Periode: Jaar 1 Blok 1<br>
+Vak: Project Individueel 1<br>
 Voor het ISGA project moesten ik een digitale uitbreiding maken van het International Student Guide Amsterdam. Als randvoorwaarden had ik het volgende meegekregen:
 -	De digitale uitbreiding is een prototype. Niks hoeft dus werkend te zijn als het maar duidelijk is wat het doet.
 -	De uitbreiding moet gecodeerd zijn in HTML en CSS.
@@ -49,11 +49,11 @@ Eindproduct: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.Website/
 ## Met CSS spelen
 <details open>
  <summary><img src="images/css-cover.gif" alt="De animatie die ik heb gemaakt voor de css cursus."></summary>
-Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.MetCSSSpelen/
+ <strong>Link naar het eindresultaat:</strong> https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.MetCSSSpelen/
  
  ### Opdracht
- Periode: Jaar 1 Blok 3
-Vak: SRP cursus- met CSS spelen
+ Periode: Jaar 1 Blok 3<br>
+Vak: SRP cursus- met CSS spelen<br>
 In blok 3 mochten we voor één week een cursus volgen. Ik besloot een CSS cursus te nemen, omdat ik me graag nog wou verdiepen in CSS om echt een goede grip erover te hebben.
 
 Bij deze opdracht moesten we met CSS een kunstwerk maken en als je tijd over had kon je nog wat animaties daarbij toevoegen. Als randvoorwaarden had ik het volgende meegekregen:
@@ -79,11 +79,11 @@ Eindproduct: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.MetCSSSpelen/
 ## Avatar spel
 <details open>
  <summary><img src="images/atla-cover.png" alt="De homepagina van de website die ik hebt gemaakt voor inleiding programmeren."></summary>
- Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/Leo.Kramer.InleidingProgrammeren.Eindopdracht/
+ <strong>Link naar het eindresultaat:</strong> https://oege.ie.hva.nl/~kramerl7/Leo.Kramer.InleidingProgrammeren.Eindopdracht/
  
  ### Opdracht
- Periode: Jaar 1 Blok 4
-Vak: Inleiding Programmeren
+ Periode: Jaar 1 Blok 4<br>
+Vak: Inleiding Programmeren<br>
 Bij Inleiding Programmeren leerde ik de basis van Javascript, een taal waarmee ik nooit eerder heb gewerkt.
 
 Bij deze opdracht moesten we een spel maken met als inspiratie Tamagotchi.
