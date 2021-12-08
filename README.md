@@ -79,7 +79,7 @@ Eindproduct: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.MetCSSSpelen/
 ## Avatar spel
 <details open>
  <summary><img src="images/atla-cover.png" alt="De homepagina van de website die ik hebt gemaakt voor inleiding programmeren."></summary>
- Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/Leo.Kramer.InleidingProgrammeren.Eindopdracht/home.html
+ Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/Leo.Kramer.InleidingProgrammeren.Eindopdracht/
  
  ### Opdracht
  Periode: Jaar 1 Blok 4
