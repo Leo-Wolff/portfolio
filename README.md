@@ -17,6 +17,8 @@ Naast school hou ik mezelf ook continu bezig. Ik ben secretaris bij IAM Core, ik
 ## Het ISGA project
 <details>
  <summary></summary>
+ Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.Website/
+ 
  ###Opdracht
  
  
@@ -31,6 +33,8 @@ Naast school hou ik mezelf ook continu bezig. Ik ben secretaris bij IAM Core, ik
 ## Met CSS spelen
 <details>
  <summary></summary>
+ Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/LeoKramer.Staal.MetCSSSpelen/
+ 
  ###Opdracht
  
  
@@ -45,6 +49,8 @@ Naast school hou ik mezelf ook continu bezig. Ik ben secretaris bij IAM Core, ik
 ## Avatar spel
 <details>
  <summary></summary>
+ Link naar het eindresultaat: https://oege.ie.hva.nl/~kramerl7/Leo.Kramer.InleidingProgrammeren.Eindopdracht/home.html
+ 
  ###Opdracht
  
  
