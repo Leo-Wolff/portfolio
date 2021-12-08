@@ -109,6 +109,6 @@ Alsnog ben ik trots dat ik het concept van het spel naar voren heb laten komen, 
 </details>
 
 ## Contact
-E-mail: leokramer17@gmail.com
-Telefoonnummer: 06 45 92 10 49
-Linkedin: https://www.linkedin.com/in/leo-kramer-aaa825224/
+- E-mail: leokramer17@gmail.com
+- Telefoonnummer: 06 45 92 10 49
+- Linkedin: https://www.linkedin.com/in/leo-kramer-aaa825224/
