@@ -47,6 +47,10 @@ h1 {
     font-size: 82px;
 }
 
+h2 {
+    font-size: 48px;
+}
+
 h3 {
     font-size: 24px;
 }
@@ -59,7 +63,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
 
-    margin: 16px;
+    margin: 1em;
     padding: 0;
 
     list-style: none;
@@ -67,7 +71,7 @@ nav ul {
 
 nav ul div {
     display: flex;
-    gap: 32px;
+    gap: 2em;
 }
 
 nav ul li a:hover {
@@ -104,6 +108,8 @@ nav ul li a:active {
     font-weight: bold;
     color: var(--secondary);
 }
+
+/* INTRODUCTION */
 
 section:first-of-type img:not(section section:first-of-type img) {
     position: absolute;
@@ -177,9 +183,10 @@ section:first-of-type ul li p {
     background-color: var(--accent);
 }
 
-section:nth-of-type(2):not(section:nth-of-type(2) section) {
-    /* display: grid;
-    grid-template-columns: 1fr; */
+/* ABOUT ME */
+
+#about {
+    position: relative;
 
     margin-top: calc(37em / 2);
 
@@ -188,96 +195,47 @@ section:nth-of-type(2):not(section:nth-of-type(2) section) {
     z-index: -10;
 }
 
-section:nth-of-type(2) svg {
+#about svg {
     position: absolute;
-    top: 45em;
-    left: -50em;
+    top: 15em;
+    left: 40em;
 
     z-index: 10;
 }
 
-section:nth-of-type(2) section:first-of-type {
-    position: absolute;
-    top: 50em;
+#about section:nth-of-type(2) {
+    margin-bottom: -17.5em;
 }
 
-section:nth-of-type(2) section img {
+#about section img {
     position: relative;
 
     border-radius: 5px;
 
     width: 12em;
     height: 12em;
+    object-fit: cover;
 }
 
-section:nth-of-type(2) section:first-of-type img {
-    position: relative;
-    left: calc(100% - (12em + 2em + 10em));
-
-    border-radius: 5px;
-
-    width: 12em;
-    height: 12em;
-}
-
-section:nth-of-type(2) div {
-    border-radius: 360px;
-
-    width: 18em;
-    height: 18em;
-
-    background-color: var(--text);
-    opacity: 0.05;
-
-    z-index: -5;
-}
-
-section:nth-of-type(2) section:first-of-type div {
-    position: relative;
-    top: 0;
-    left: calc(100% - (12em + 2em + 10em));
-}
-
-section:nth-of-type(2)
-    section:not(section:nth-of-type(2) section:first-of-type) {
-    display: none;
-}
-
-section:nth-of-type(3),
-section:last-of-type {
-    display: none;
-}
-
-/* 
-
-section:nth-of-type(2) img {
-    position: relative;
+#about section:first-of-type img {
     top: 20em;
-    left: calc(2em + 10em);
+    left: calc(100% - (12em + 2em + 10em));
 
-    border-radius: 5px;
-
-    width: 12em;
-    height: 12em;
+    object-position: 0% 10%;
 }
 
-section:nth-of-type(2) img:nth-of-type(2),
-section:nth-of-type(2) img:last-of-type {
+#about section:nth-of-type(2) img {
+    top: 3em;
+    left: calc(2em + 10em);
+}
+
+#about section:last-of-type img {
+    top: 3em;
     left: calc(100% - (12em + 2em + 10em));
 }
 
-section:nth-of-type(2) img:nth-of-type(3) {
-    top: 0;
-}
-
-section:nth-of-type(2) img:last-of-type {
-    top: -15em;
-}
-
-section:nth-of-type(2) div {
+#about div {
     position: relative;
-    top: 5em;
-    left: calc(4em + 10em);
 
     border-radius: 360px;
 
@@ -290,68 +248,67 @@ section:nth-of-type(2) div {
     z-index: -5;
 }
 
-section:nth-of-type(2) div:first-of-type,
-section:nth-of-type(2) div:last-of-type {
+#about section:first-of-type div {
+    top: 5em;
     left: calc(100% - (18em + 4em + 10em));
 }
 
-section:nth-of-type(2) div:nth-of-type(2) {
-    top: -15em;
+#about section:nth-of-type(2) div {
+    top: -12em;
+    left: calc(4em + 10em);
 }
 
-section:nth-of-type(2) div:last-of-type {
-    top: -30em;
+#about section:last-of-type div {
+    top: -12em;
+    left: calc(100% - (18em + 4em + 10em));
 }
 
-section:nth-of-type(2) h3,
-section:nth-of-type(2) p {
+#about h3,
+#about p {
     position: relative;
-    top: -6.5em;
-    left: calc(100% - (18em + 2em + 10em));
 
     width: 55em;
 }
 
-section:nth-of-type(2) h3:first-of-type,
-section:nth-of-type(2) h3:last-of-type {
+#about section:first-of-type h3 {
+    top: -6.5em;
     left: 10em;
 }
 
-section:nth-of-type(2) p:first-of-type,
-section:nth-of-type(2) p:last-of-type {
+#about section:first-of-type p {
+    top: -6.5em;
     left: calc(2em + 10em);
 }
 
-section:nth-of-type(2) h3:nth-of-type(2),
-section:nth-of-type(2) p:nth-of-type(2) {
-    top: -26em;
-    left: calc(100% - (55em + 2em + 10em));
-}
-
-section:nth-of-type(2) h3:nth-of-type(2) {
-    top: calc(-26em + 3em);
+#about section:nth-of-type(2) h3 {
+    top: calc(-23em + 3em);
     left: calc(100% - (55em + 1em));
 }
 
-section:nth-of-type(2) h3:last-of-type,
-section:nth-of-type(2) p:last-of-type {
-    top: -41.5em;
-    left: calc(2em + 10em);
+#about section:nth-of-type(2) p {
+    top: -23em;
+    left: calc(100% - (55em + 2em + 10em));
 }
 
-section:nth-of-type(2) h3:last-of-type {
-    top: calc(-41.5em + 6em);
+#about section:last-of-type h3 {
+    top: calc(-23em + 3em);
     left: 10em;
 }
 
-section:nth-of-type(2) span {
+#about section:last-of-type p {
+    top: -23em;
+    left: calc(2em + 10em);
+}
+
+#about span {
     font-weight: bold;
     color: var(--accent);
 }
 
-section:nth-of-type(2) a {
-    position: absolute;
-    top: 50em;
+#about a {
+    position: relative;
+    top: -12.5em;
+    left: calc(50% - 17.5em / 2);
 
     border-radius: 5px;
     padding: 0.5em;
@@ -361,4 +318,98 @@ section:nth-of-type(2) a {
     font-weight: bold;
     background-color: var(--secondary);
     color: var(--background-opacity);
-} */
+}
+
+/* MY WORK */
+
+#work {
+    position: absolute;
+    top: 120em;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 824px;
+}
+
+#work h2 {
+    position: relative;
+    top: 2em;
+    left: calc(50% - 2.25em);
+}
+
+#work section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5em;
+    row-gap: 8em;
+
+    margin-top: 10em;
+}
+
+#work section a {
+    justify-self: center;
+
+    position: relative;
+
+    border-radius: 10px;
+
+    width: 16em;
+    height: 16em;
+
+    overflow-y: hidden;
+}
+
+#work section a img {
+    border-radius: 10px;
+}
+
+#work section a p {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    width: 14em;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* CONTACT */
+
+#contact {
+    position: absolute;
+    top: calc(120em + 65em);
+}
+
+#contact h2 {
+    position: relative;
+    left: calc(50% - 5em);
+}
+
+#contact ul {
+    display: flex;
+}
+
+#contact ul li a {
+    padding: 2em;
+    border-radius: 10px;
+
+    width: 22em;
+
+    font-weight: bold;
+
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+#contact ul li span {
+    font-weight: normal;
+    color: var(--background);
+}
