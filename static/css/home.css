@@ -1,6 +1,6 @@
 /* INTRODUCTION */
 
-section:first-of-type img:not(section section:first-of-type img) {
+section:first-of-type > img {
     position: absolute;
     top: 14em;
     left: 15.5em;
@@ -15,7 +15,7 @@ section:first-of-type img:not(section section:first-of-type img) {
     z-index: 5;
 }
 
-section:first-of-type div:not(section section:first-of-type div) {
+section:first-of-type > div {
     position: absolute;
     top: 4.25em;
     left: 1em;
