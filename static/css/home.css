@@ -265,6 +265,7 @@ section:first-of-type:not(article section) > ul li p {
     font-weight: bold;
 
     text-align: center;
+    color: #fff;
 }
 
 /* CONTACT */
@@ -273,7 +274,7 @@ section:first-of-type:not(article section) > ul li p {
     position: absolute;
     top: calc(120em + 60em);
 
-    padding-bottom: 10em;
+    height: 30em;
 }
 
 #contact h2 {
@@ -316,4 +317,24 @@ section:first-of-type:not(article section) > ul li p {
 
     font-weight: normal;
     color: var(--background);
+}
+
+#background-circle {
+    position: absolute;
+    top: calc(120em + 60em - 10em);
+    height: calc(30em + 15em);
+    overflow: hidden;
+}
+
+#background-circle div {
+    position: absolute;
+    top: -10em;
+    left: calc(50% - (105em / 2));
+    width: 100em;
+    height: 100em;
+    border-radius: 100%;
+    background-color: var(--background-opacity);
+    z-index: -1;
+    filter: blur(2.5px);
+    overflow: hidden;
 }
