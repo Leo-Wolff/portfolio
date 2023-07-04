@@ -1,6 +1,6 @@
 /* INTRODUCTION */
 
-section:first-of-type > img {
+section:first-of-type:not(article > section) > img {
     position: absolute;
     top: 14em;
     left: 15.5em;
@@ -15,7 +15,7 @@ section:first-of-type > img {
     z-index: 5;
 }
 
-section:first-of-type > div {
+section:first-of-type:not(article > section) > div {
     position: absolute;
     top: 4.25em;
     left: 1em;
@@ -29,7 +29,7 @@ section:first-of-type > div {
     filter: blur(5px);
 }
 
-section:first-of-type h1 {
+section:first-of-type:not(article > section) > h1 {
     position: absolute;
     top: 2em;
     left: 6.5em;
@@ -37,7 +37,7 @@ section:first-of-type h1 {
     z-index: 5;
 }
 
-section:first-of-type ul {
+section:first-of-type:not(article > section) > ul {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
@@ -53,12 +53,12 @@ section:first-of-type ul {
     left: calc(15.5em + 24em + 2em);
 }
 
-section:first-of-type ul li {
+section:first-of-type:not(article > section) > li {
     overflow: auto;
     width: auto;
 }
 
-section:first-of-type ul li p {
+section:first-of-type:not(article > section, article > section section) > p {
     border-radius: 10px;
     padding: 0.4em;
     white-space: nowrap;
