@@ -62,6 +62,10 @@ a {
     text-decoration: none;
 }
 
+span {
+    font-weight: bold;
+}
+
 nav ul {
     display: flex;
     justify-content: space-between;

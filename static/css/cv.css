@@ -1,0 +1,84 @@
+#cv section:first-of-type > img {
+    top: 4.25em;
+    left: 4em;
+}
+
+#cv section:first-of-type > div {
+    top: calc(4.25em + ((24em - 21.5em) / 2));
+    left: calc(4em + (24em / 2));
+
+    width: 21.5em;
+    height: 21.5em;
+}
+
+#cv section:first-of-type > h1 {
+    top: calc(4.25em - ((24em - 21.75em) / 2));
+    left: 7.5em;
+}
+
+#cv article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    position: absolute;
+    top: calc(30em - 2em);
+    left: calc(50% - (25em + 8em));
+
+    margin: 3em 4em 10em 4em;
+    padding-bottom: 10em;
+
+    width: 50em;
+}
+
+#cv article li:not(:first-of-type) {
+    margin-top: 0.5em;
+}
+
+#cv article section {
+    margin-top: 2em;
+}
+
+#cv article > section:first-of-type {
+    border-radius: 10px;
+    padding: 0em 2em 2em 2em;
+
+    width: 18em;
+
+    background-color: var(--background-opacity);
+}
+
+#cv article > section:first-of-type section:last-of-type ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#cv article > section:first-of-type section:last-of-type h3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#cv article > section:first-of-type section:last-of-type div:nth-of-type(odd) {
+    grid-column-start: 1;
+}
+
+#cv article > section:first-of-type section:last-of-type div:nth-of-type(even) {
+    grid-column-start: 2;
+}
+
+#cv
+    article
+    > section:first-of-type
+    section:last-of-type
+    div:nth-of-type(even)
+    li {
+    color: var(--accent);
+}
+
+#cv article > section:nth-of-type(2) li {
+    margin-top: 1em;
+}
+
+#cv article > section:nth-of-type(2) p:first-of-type {
+    font-weight: bold;
+    text-transform: uppercase;
+}
