@@ -171,12 +171,12 @@ section:first-of-type:not(article section) > ul li p {
 }
 
 #about section:nth-of-type(2) h3 {
-    top: calc(-23em + 3em);
+    top: calc(-24.5em + 3em);
     left: calc(100% - (55em + 2.5em));
 }
 
 #about section:nth-of-type(2) p {
-    top: -23em;
+    top: -24.5em;
     left: calc(100% - (55em + 2em + 10em));
 }
 
