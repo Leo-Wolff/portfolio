@@ -207,7 +207,7 @@ section:first-of-type:not(article section) > ul {
     z-index: 5;
 }
 
-/* future refactor: eliminate p entire */
+/* future refactor: eliminate p entirely */
 section:first-of-type:not(article section) > ul li {
     width: auto;
 }
@@ -227,26 +227,21 @@ section:first-of-type:not(article section) > ul li p {
 ABOUT ME
 ************* */
 
-#about {
-    position: relative;
+/* future refactor: make sections more dynamic, grid maybe? */
 
-    margin-top: calc(37em / 1.5);
+#about {
+    /* width / 2 + top position big introduction circle */
+    margin-top: calc((37em / 2) + 4.25em);
 
     background-color: var(--background-opacity);
-
-    z-index: 0;
 }
 
 #about svg {
     position: absolute;
-    top: 15em;
+    top: calc(37em / 1.5 + 3em);
     left: 40em;
 
     z-index: 10;
-}
-
-#about section:nth-of-type(2) {
-    margin-bottom: -17.5em;
 }
 
 #about section img {
@@ -257,23 +252,6 @@ ABOUT ME
     width: 12em;
     height: 12em;
     object-fit: cover;
-}
-
-#about section:first-of-type img {
-    top: 20em;
-    left: calc(100% - (12em + 2em + 10em));
-
-    object-position: 0% 10%;
-}
-
-#about section:nth-of-type(2) img {
-    top: 3em;
-    left: calc(2em + 10em);
-}
-
-#about section:last-of-type img {
-    top: 3em;
-    left: calc(100% - (12em + 2em + 10em));
 }
 
 #about div {
@@ -290,29 +268,18 @@ ABOUT ME
     z-index: 5;
 }
 
-#about section:first-of-type div {
-    top: 5em;
-    left: calc(100% - (18em + 4em + 10em));
-
-    filter: blur(0px);
-}
-
-#about section:nth-of-type(2) div {
-    top: -12em;
-    left: calc(4em + 10em);
-}
-
-#about section:last-of-type div {
-    top: -12em;
-    left: calc(100% - (18em + 4em + 10em));
-}
-
 #about h3,
 #about p {
     position: relative;
 
     width: 55em;
 }
+
+#about span {
+    color: var(--accent);
+}
+
+/* first section */
 
 #about section:first-of-type h3 {
     top: -5.75em;
@@ -322,6 +289,27 @@ ABOUT ME
 #about section:first-of-type p {
     top: -6.5em;
     left: calc(2em + 10em);
+}
+
+#about section:first-of-type img {
+    top: 20em;
+    left: calc(100% - (12em + 2em + 10em));
+
+    object-position: 0% 10%;
+}
+
+#about section:first-of-type div {
+    top: 5em;
+    left: calc(100% - (18em + 4em + 10em));
+
+    filter: blur(0px);
+}
+
+/* second section */
+
+#about section:nth-of-type(2) {
+    /* check */
+    margin-bottom: -17.5em;
 }
 
 #about section:nth-of-type(2) h3 {
@@ -334,6 +322,28 @@ ABOUT ME
     left: calc(100% - (55em + 2em + 10em));
 }
 
+#about section:nth-of-type(2) img {
+    top: 3em;
+    left: calc(2em + 10em);
+}
+
+#about section:nth-of-type(2) div {
+    top: -12em;
+    left: calc(4em + 10em);
+}
+
+/* third section */
+
+#about section:last-of-type img {
+    top: 3em;
+    left: calc(100% - (12em + 2em + 10em));
+}
+
+#about section:last-of-type div {
+    top: -12em;
+    left: calc(100% - (18em + 4em + 10em));
+}
+
 #about section:last-of-type h3 {
     top: calc(-23em + 3em);
     left: 10.25em;
@@ -342,10 +352,6 @@ ABOUT ME
 #about section:last-of-type p {
     top: -23em;
     left: calc(2em + 10em);
-}
-
-#about span {
-    color: var(--accent);
 }
 
 #about a {
@@ -369,11 +375,10 @@ MY WORK
 
 #work {
     position: absolute;
-    top: 120em;
     left: 50%;
     transform: translateX(-50%);
 
-    width: calc(16em * 2 + 5em);
+    width: calc(16em * 2 + 5em); /* width of two buttons + column gap */
 
     z-index: 5;
 }
@@ -381,7 +386,8 @@ MY WORK
 #work h2 {
     position: relative;
     top: 2em;
-    left: calc(50% - 2.25em);
+
+    text-align: center;
 }
 
 #work section {
@@ -391,33 +397,20 @@ MY WORK
     row-gap: 5em;
 
     margin-top: 7.5em;
-
-    z-index: 5;
 }
 
 #work section a {
-    justify-self: center;
-
     position: relative;
 
     border-radius: 10px;
 
     overflow-y: hidden;
-    width: 16em;
     height: 16em;
-}
-
-#work section a img {
-    border-radius: 10px;
 }
 
 #work section a p {
     position: absolute;
     bottom: 2em;
-    left: 50%;
-    transform: translateX(-50%);
-
-    margin: 0;
 
     width: 14em;
 
@@ -433,23 +426,16 @@ CONTACT
 
 #contact {
     position: absolute;
-    top: calc(120em + 60em);
-
-    height: 30em;
+    top: 172.5em;
 
     z-index: 5;
 }
 
 #contact h2 {
-    position: relative;
-    left: calc(50% - 5em);
+    text-align: center;
 }
 
 #contact ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-
     position: relative;
     left: calc(50% - (26em / 2));
 
@@ -457,6 +443,10 @@ CONTACT
 }
 
 #contact ul li {
+    position: relative;
+    /* -5em to align with ul, the rest is half op li width minus 50% to properly center it */
+    left: calc(-5em + (50% - (20em / 2)));
+
     margin: 2em 2em 0 2em;
 
     text-align: center;
@@ -471,7 +461,6 @@ CONTACT
     width: 20em;
 
     font-weight: bold;
-    text-align: center;
     color: #000;
     background-color: var(--secondary);
 }
@@ -489,20 +478,19 @@ BACKGROUND CIRCLE
 
 #background-circle {
     position: absolute;
-    top: calc(120em + 60em - 20em);
-    height: calc(30em + 20em);
+    /* top of #contact section - 20em to touch the #work section */
+    top: calc(172.5em - 20em);
+    height: 50em;
 
     overflow: hidden;
 }
 
 #background-circle div {
     position: absolute;
-    top: 0;
     left: calc(50% - (85em / 2));
 
     border-radius: 100%;
 
-    overflow: hidden;
     width: 85em;
     height: 85em;
 
