@@ -127,6 +127,15 @@ nav ul li:nth-of-type(5) {
     width: 2em;
 }
 
+nav ul li span {
+    font-weight: normal;
+}
+
+nav ul li span.active {
+    font-weight: bold;
+    color: var(--text);
+}
+
 nav svg {
     position: relative;
     left: calc(50% - (1.5em / 2));

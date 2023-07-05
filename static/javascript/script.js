@@ -29,6 +29,8 @@ const currentPageFileName =
         currentPageWithoutHash.lastIndexOf("/") + 1
     ) || "index.html"
 
+console.log(currentPageFileName)
+
 enSwitch.addEventListener("click", () => {
     if (currentPage.includes("pages/en/index.html")) {
         return
@@ -41,7 +43,7 @@ enSwitch.addEventListener("click", () => {
             0,
             currentPage.lastIndexOf("/")
         )
-        window.location.href = `${currentPageFolderPath}/pages/en/${currentPageFileName}`
+        window.location.href = `${currentPageFolderPath}/../../pages/en/${currentPageFileName}`
     }
 })
 
@@ -53,6 +55,6 @@ nlSwitch.addEventListener("click", () => {
             0,
             currentPage.lastIndexOf("/")
         )
-        window.location.href = `${currentPageFolderPath}/pages/nl/${currentPageFileName}`
+        window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentPageFileName}`
     }
 })

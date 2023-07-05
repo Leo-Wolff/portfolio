@@ -133,6 +133,7 @@ header h1 {
     padding: 2em;
 
     width: 18em;
+    height: auto;
 
     background-color: var(--background-opacity);
 }
@@ -157,6 +158,15 @@ header h1 {
     height: 4em;
 }
 
+#work-content > section:nth-of-type(2) p {
+    white-space: pre-line;
+    margin-top: -0.75em;
+}
+
+#work-content > section:nth-of-type(2) span:nth-of-type(3) {
+    margin-top: 0.75em;
+}
+
 #work-content > section:last-of-type {
     position: relative;
     left: calc(50% - (25em + 8em));
@@ -171,4 +181,8 @@ header h1 {
     padding: 1em 1em 2em 1em;
 
     background-color: #fff;
+}
+
+#work-content > section:last-of-type br {
+    margin-bottom: 0.75em;
 }
