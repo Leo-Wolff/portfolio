@@ -57,6 +57,14 @@
     grid-column-end: 2;
 }
 
+#cv
+    article
+    > section:first-of-type
+    section:last-of-type
+    h3:not(:first-of-type) {
+    margin-top: 0.75em;
+}
+
 #cv article > section:first-of-type section:last-of-type div:nth-of-type(odd) {
     grid-column-start: 1;
 }

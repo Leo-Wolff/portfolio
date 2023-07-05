@@ -32,8 +32,8 @@ section:first-of-type:not(article section) > div {
 
 section:first-of-type:not(article section) > h1 {
     position: absolute;
-    top: 2em;
-    left: 6.5em;
+    top: 2.5em;
+    left: 9em;
 
     z-index: 10;
 }
@@ -140,6 +140,7 @@ section:first-of-type:not(article section) > ul li p {
 #about section:first-of-type div {
     top: 5em;
     left: calc(100% - (18em + 4em + 10em));
+    filter: blur(0px);
 }
 
 #about section:nth-of-type(2) div {
