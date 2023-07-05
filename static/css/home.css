@@ -300,7 +300,8 @@ section:first-of-type:not(article section) > ul li p {
 }
 
 #contact ul li {
-    padding: 2em;
+    margin: 2em 2em 0 2em;
+    text-align: center;
 }
 
 #contact ul li a {
@@ -327,20 +328,20 @@ section:first-of-type:not(article section) > ul li p {
 
 #background-circle {
     position: absolute;
-    top: calc(120em + 60em - 10em);
-    height: calc(30em + 15em);
+    top: calc(120em + 60em - 20em);
+    height: calc(30em + 20em);
     overflow: hidden;
 }
 
 #background-circle div {
     position: absolute;
-    top: -10em;
-    left: calc(50% - (100em / 2));
-    width: 100em;
-    height: 100em;
+    top: 0;
+    left: calc(50% - (85em / 2));
+    width: 85em;
+    height: 85em;
     border-radius: 100%;
     background-color: var(--background-opacity);
-    z-index: 5;
+    z-index: 0;
     filter: blur(2.5px);
     overflow: hidden;
 }

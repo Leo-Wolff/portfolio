@@ -24,27 +24,35 @@ const enSwitch = document.querySelectorAll(
 )[1]
 const currentPage = window.location.href
 const currentPageWithoutHash = currentPage.split("#")[0]
-const currentPageFileName = currentPageWithoutHash.substring(
-    currentPageWithoutHash.lastIndexOf("/") + 1
-)
-
-console.log(currentPageFileName)
+const currentPageFileName =
+    currentPageWithoutHash.substring(
+        currentPageWithoutHash.lastIndexOf("/") + 1
+    ) || "index.html"
 
 enSwitch.addEventListener("click", () => {
     if (currentPage.includes("pages/en/index.html")) {
         return
     }
-    if (currentPageFileName == "index.html") {
-        window.location.href = `pages/en/index.html`
+
+    if (currentPageFileName === "index.html" || currentPage.endsWith("/")) {
+        window.location.href = "pages/en/index.html"
     } else {
-        window.location.href = `../en/${currentPageFileName}`
+        const currentPageFolderPath = currentPage.substring(
+            0,
+            currentPage.lastIndexOf("/")
+        )
+        window.location.href = `${currentPageFolderPath}/pages/en/${currentPageFileName}`
     }
 })
 
 nlSwitch.addEventListener("click", () => {
-    if (currentPageFileName == "index.html") {
-        window.location.href = `../../index.html`
+    if (currentPageFileName === "index.html" || currentPage.endsWith("/")) {
+        window.location.href = "../../index.html"
     } else {
-        window.location.href = `../nl/${currentPageFileName}`
+        const currentPageFolderPath = currentPage.substring(
+            0,
+            currentPage.lastIndexOf("/")
+        )
+        window.location.href = `${currentPageFolderPath}/pages/nl/${currentPageFileName}`
     }
 })
