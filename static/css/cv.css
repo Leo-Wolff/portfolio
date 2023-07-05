@@ -12,8 +12,8 @@
 }
 
 #cv section:first-of-type > h1 {
-    top: calc(4.25em - ((24em - 21.75em) / 2));
-    left: 7.5em;
+    top: 3.75em;
+    left: 9em;
 }
 
 #cv article {

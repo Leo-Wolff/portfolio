@@ -13,6 +13,7 @@ header h1 {
 
     font-family: var(--text-font-main);
     font-size: 72px;
+    color: #fff;
 
     text-align: center;
 }
@@ -85,7 +86,7 @@ header h1 {
     width: 1.5em;
     height: 1.5em;
     background: var(--secondary);
-    border-radius: 360px;
+    border-radius: 100%;
     top: 50%;
 
     transform: translate(50%, -50%);
@@ -150,6 +151,7 @@ header h1 {
     margin: 0.5em;
 }
 
+/* change image colour when theme is changed */
 #work-content > section:nth-of-type(2) section img {
     width: 4em;
     height: 4em;

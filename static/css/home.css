@@ -12,7 +12,7 @@ section:first-of-type:not(article section) > img {
     width: 24em;
     height: 24em;
 
-    z-index: 5;
+    z-index: 10;
 }
 
 section:first-of-type:not(article section) > div {
@@ -20,13 +20,14 @@ section:first-of-type:not(article section) > div {
     top: 4.25em;
     left: 1em;
 
-    border-radius: 360px;
+    border-radius: 100%;
 
     width: 37em;
     height: 37em;
 
     background-color: var(--primary);
     filter: blur(5px);
+    z-index: 5;
 }
 
 section:first-of-type:not(article section) > h1 {
@@ -34,7 +35,7 @@ section:first-of-type:not(article section) > h1 {
     top: 2em;
     left: 6.5em;
 
-    z-index: 5;
+    z-index: 10;
 }
 
 section:first-of-type:not(article section) > ul {
@@ -51,6 +52,7 @@ section:first-of-type:not(article section) > ul {
     position: absolute;
     top: calc(14em + (24em / 3));
     left: calc(15.5em + 24em + 2em);
+    z-index: 5;
 }
 
 section:first-of-type:not(article section) > ul li {
@@ -75,11 +77,11 @@ section:first-of-type:not(article section) > ul li p {
 #about {
     position: relative;
 
-    margin-top: calc(37em / 2);
+    margin-top: calc(37em / 1.5);
 
     background-color: var(--background-opacity);
 
-    z-index: -10;
+    z-index: 0;
 }
 
 #about svg {
@@ -124,7 +126,7 @@ section:first-of-type:not(article section) > ul li p {
 #about div {
     position: relative;
 
-    border-radius: 360px;
+    border-radius: 100%;
 
     width: 18em;
     height: 18em;
@@ -132,7 +134,7 @@ section:first-of-type:not(article section) > ul li p {
     background-color: var(--text);
     opacity: 0.05;
 
-    z-index: -5;
+    z-index: 5;
 }
 
 #about section:first-of-type div {
@@ -158,8 +160,8 @@ section:first-of-type:not(article section) > ul li p {
 }
 
 #about section:first-of-type h3 {
-    top: -6.5em;
-    left: 10em;
+    top: -5.75em;
+    left: 10.25em;
 }
 
 #about section:first-of-type p {
@@ -169,7 +171,7 @@ section:first-of-type:not(article section) > ul li p {
 
 #about section:nth-of-type(2) h3 {
     top: calc(-23em + 3em);
-    left: calc(100% - (55em + 1em));
+    left: calc(100% - (55em + 2.5em));
 }
 
 #about section:nth-of-type(2) p {
@@ -179,7 +181,7 @@ section:first-of-type:not(article section) > ul li p {
 
 #about section:last-of-type h3 {
     top: calc(-23em + 3em);
-    left: 10em;
+    left: 10.25em;
 }
 
 #about section:last-of-type p {
@@ -203,7 +205,7 @@ section:first-of-type:not(article section) > ul li p {
 
     font-weight: bold;
     background-color: var(--secondary);
-    color: var(--background-opacity);
+    color: #000;
 }
 
 /* MY WORK */
@@ -215,7 +217,8 @@ section:first-of-type:not(article section) > ul li p {
 
     transform: translateX(-50%);
 
-    width: 824px;
+    width: calc(16em * 2 + 5em);
+    z-index: 1;
 }
 
 #work h2 {
@@ -231,6 +234,7 @@ section:first-of-type:not(article section) > ul li p {
     row-gap: 5em;
 
     margin-top: 7.5em;
+    z-index: 1;
 }
 
 #work section a {
@@ -275,6 +279,7 @@ section:first-of-type:not(article section) > ul li p {
     top: calc(120em + 60em);
 
     height: 30em;
+    z-index: 15;
 }
 
 #contact h2 {
@@ -308,7 +313,7 @@ section:first-of-type:not(article section) > ul li p {
     font-weight: bold;
 
     background-color: var(--secondary);
-    color: var(--background);
+    color: #000;
     text-align: center;
 }
 
@@ -316,7 +321,7 @@ section:first-of-type:not(article section) > ul li p {
     display: inline-block;
 
     font-weight: normal;
-    color: var(--background);
+    color: #000;
 }
 
 #background-circle {
@@ -329,12 +334,12 @@ section:first-of-type:not(article section) > ul li p {
 #background-circle div {
     position: absolute;
     top: -10em;
-    left: calc(50% - (105em / 2));
+    left: calc(50% - (100em / 2));
     width: 100em;
     height: 100em;
     border-radius: 100%;
     background-color: var(--background-opacity);
-    z-index: -1;
+    z-index: 5;
     filter: blur(2.5px);
     overflow: hidden;
 }
