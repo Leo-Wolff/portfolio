@@ -44,7 +44,7 @@ DEFAULT STYLING
     width: 100%;
 
     font-family: var(--primary-font);
-    font-size: 24px;
+    font-size: 22px;
     color: var(--text);
 }
 
@@ -102,6 +102,7 @@ nav ul {
 
 nav ul div {
     display: flex;
+    justify-content: space-between;
     gap: 1em;
 
     margin: 0.5em 1em 0 1.75em;
@@ -168,7 +169,7 @@ section:first-of-type:not(article section) > img {
     z-index: 10;
 }
 
-section:first-of-type:not(article section) > div {
+body > section:first-of-type > div {
     position: absolute;
     top: 4.25em;
     left: 1em;
@@ -227,11 +228,12 @@ section:first-of-type:not(article section) > ul li p {
 ABOUT ME
 ************* */
 
-/* future refactor: make sections more dynamic, grid maybe? */
-
 #about {
     /* width / 2 + top position big introduction circle */
     margin-top: calc((37em / 2) + 4.25em);
+
+    /* 3 paragraphs of 20em + button 30em */
+    height: calc(20em * 3 + 30em);
 
     background-color: var(--background-opacity);
 }
@@ -244,17 +246,7 @@ ABOUT ME
     z-index: 10;
 }
 
-#about section img {
-    position: relative;
-
-    border-radius: 5px;
-
-    width: 12em;
-    height: 12em;
-    object-fit: cover;
-}
-
-#about div {
+#about div > div {
     position: relative;
 
     border-radius: 100%;
@@ -268,95 +260,67 @@ ABOUT ME
     z-index: 5;
 }
 
-#about h3,
-#about p {
-    position: relative;
+#about div > img {
+    position: absolute;
 
-    width: 55em;
+    margin: calc(12em / 4) 0 0 calc(18em / 2);
+    border-radius: 5px;
+
+    width: 12em;
+    height: 12em;
+    object-fit: cover;
+}
+
+#about section:first-of-type > div:first-of-type img {
+    object-position: 0% 10%;
 }
 
 #about span {
     color: var(--accent);
 }
 
-/* first section */
+#about section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
 
-#about section:first-of-type h3 {
-    top: -5.75em;
-    left: 10.25em;
-}
-
-#about section:first-of-type p {
-    top: -6.5em;
-    left: calc(2em + 10em);
-}
-
-#about section:first-of-type img {
+    position: relative;
     top: 20em;
-    left: calc(100% - (12em + 2em + 10em));
+    left: calc(50% - ((55em + 18em + 6em) / 2));
 
-    object-position: 0% 10%;
+    margin: 0 4em 0 2em;
+
+    width: calc(55em + 18em + 6em);
 }
 
-#about section:first-of-type div {
-    top: 5em;
-    left: calc(100% - (18em + 4em + 10em));
+#about section > div:first-of-type {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    justify-self: end;
 
-    filter: blur(0px);
+    /* width of div + half of img width */
+    width: calc(18em + (12em / 2));
 }
 
-/* second section */
+#about section > div:last-of-type {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    align-self: center;
 
-#about section:nth-of-type(2) {
-    /* check */
-    margin-bottom: -17.5em;
+    width: 55em;
 }
 
-#about section:nth-of-type(2) h3 {
-    top: calc(-24.5em + 3em);
-    left: calc(100% - (55em + 2.5em));
+#about section:nth-of-type(2) > div:first-of-type {
+    grid-column-start: 1;
 }
 
-#about section:nth-of-type(2) p {
-    top: -24.5em;
-    left: calc(100% - (55em + 2em + 10em));
-}
-
-#about section:nth-of-type(2) img {
-    top: 3em;
-    left: calc(2em + 10em);
-}
-
-#about section:nth-of-type(2) div {
-    top: -12em;
-    left: calc(4em + 10em);
-}
-
-/* third section */
-
-#about section:last-of-type img {
-    top: 3em;
-    left: calc(100% - (12em + 2em + 10em));
-}
-
-#about section:last-of-type div {
-    top: -12em;
-    left: calc(100% - (18em + 4em + 10em));
-}
-
-#about section:last-of-type h3 {
-    top: calc(-23em + 3em);
-    left: 10.25em;
-}
-
-#about section:last-of-type p {
-    top: -23em;
-    left: calc(2em + 10em);
+#about section:nth-of-type(2) > div:last-of-type {
+    grid-column-start: 2;
 }
 
 #about a {
     position: relative;
-    top: -12.5em;
+    top: 25em;
     left: calc(50% - 17.5em / 2);
 
     border-radius: 5px;
@@ -504,18 +468,15 @@ BACKGROUND CIRCLE
 HEADER/COVER IMAGE
 ************* */
 
-header img:nth-of-type(2) {
+header > img {
     object-fit: cover;
 
-    width: 100%;
     height: 24em;
 }
 
 header h1 {
     position: absolute;
     top: 5.5em;
-
-    width: 100%;
 
     font-family: var(--text-font-main);
     font-size: 72px;
@@ -543,7 +504,10 @@ ARTICLE
 PROCES
 ************* */
 
-#work-content > section:first-of-type {
+/* inspiration for timeline visual https://codepen.io/MarkBoots/pen/OJOqNyB?editors=1100 */
+
+#work-content > section:first-of-type,
+#work-content > section:last-of-type {
     position: relative;
     left: calc(50% - (25em + 8em));
 
@@ -552,23 +516,26 @@ PROCES
     width: 50em;
 }
 
-/* credit: https://codepen.io/MarkBoots/pen/OJOqNyB?editors=1100 */
-
 #work-content > section:first-of-type ul {
     display: grid;
+    /* 0.25em is the width of the line */
     grid-template-columns: 0.25em 1fr;
 }
 
 #work-content > section:first-of-type ul::before {
     content: "";
 
-    grid-column: 1;
-    grid-row: 1 / span 20;
+    /* start on row 1 and span for 10 rows (max paragraphs for an article are 10)  */
+    grid-row: 1 / span 10;
 
     margin-left: 1em;
     border-radius: 10px;
 
     background: var(--accent);
+}
+
+#work-content > section:first-of-type ul li:not(:last-of-type) {
+    margin-bottom: 2em;
 }
 
 #work-content > section:first-of-type ul li div {
@@ -577,26 +544,17 @@ PROCES
     overflow: visible;
 }
 
-#work-content > section:first-of-type ul li div img {
-    border-radius: 5px;
+/* text wrapping */
+#work-content > section:first-of-type li div,
+#work-content > section:last-of-type div img {
+    float: left;
+
+    margin: 0 1em 0 3em;
 
     width: 12em;
-    height: 12em;
 }
 
-#work-content > section:first-of-type ul img {
-    object-fit: cover;
-}
-
-#work-content > section:first-of-type ul li:nth-of-type(2) img {
-    object-fit: none;
-    object-position: 17.5% 10%;
-}
-
-#work-content > section:first-of-type ul li:last-of-type img {
-    object-position: 0% 5%;
-}
-
+/* circles on the timeline */
 #work-content > section:first-of-type ul li div::after {
     content: "";
 
@@ -613,25 +571,27 @@ PROCES
     background: var(--secondary);
 }
 
-#work-content > section:first-of-type ul li:not(:last-of-type) {
-    margin-bottom: 2em;
+#work-content > section:first-of-type ul li div img {
+    border-radius: 5px;
+
+    object-fit: cover;
+
+    width: 12em;
+    height: 12em;
+}
+
+#work-content > section:first-of-type ul li:nth-of-type(2) img {
+    object-fit: none;
+    object-position: 17.5% 10%;
+}
+
+#work-content > section:first-of-type ul li:last-of-type img {
+    object-position: 0% 5%;
 }
 
 #work-content > section:first-of-type ul li:nth-of-type(3) div,
 #work-content > section:first-of-type ul li:nth-of-type(4) div {
     width: auto;
-    height: auto;
-}
-
-#work-content > section:first-of-type li div,
-#work-content > section:last-of-type div img {
-    float: left;
-
-    margin-left: 3em;
-    margin-right: 1em;
-    border-radius: 5px;
-
-    width: 12em;
 }
 
 #work-content > section:first-of-type p,
@@ -645,9 +605,10 @@ GENERAL INFORMATION
 
 #work-content > section:nth-of-type(2) {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1em;
 
+    /* create margin effect of 5em */
     width: calc(100% - 10em);
 }
 
@@ -661,6 +622,12 @@ GENERAL INFORMATION
     background-color: var(--background-opacity);
 }
 
+#work-content > section:nth-of-type(2) p {
+    margin-top: -0.75em;
+
+    white-space: pre-line;
+}
+
 #work-content > section:nth-of-type(2) section:nth-of-type(2) div {
     display: flex;
     flex-wrap: wrap;
@@ -670,7 +637,8 @@ GENERAL INFORMATION
 }
 
 #work-content > section:nth-of-type(2) section:nth-of-type(2) div a {
-    flex: 0 0 calc(33.33% - 1em);
+    /* a third because only a max of 3 a allowed -1em for spacing */
+    flex-basis: calc(33.33% - 1em);
     display: flex;
     justify-content: center;
 
@@ -683,31 +651,17 @@ GENERAL INFORMATION
     height: 4em;
 }
 
-#work-content > section:nth-of-type(2) p {
-    margin-top: -0.75em;
-
-    white-space: pre-line;
-}
-
-#work-content > section:nth-of-type(2) span:nth-of-type(3) {
-    margin-top: 0.75em;
-}
-
 /* *************
 REFLECTION
 ************* */
 
 #work-content > section:last-of-type {
-    position: relative;
-    left: calc(50% - (25em + 8em));
-
-    margin: 3em 4em 10em 4em;
-
-    width: 50em;
+    margin-bottom: 10em;
 }
 
 #work-content > section:last-of-type div img {
     margin-left: 0;
+    border-radius: 5px;
     padding: 1em 1em 2em 1em;
 
     background-color: #fff;
