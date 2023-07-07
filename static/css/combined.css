@@ -200,22 +200,21 @@ section:first-of-type:not(article section) > ul {
     gap: 2em;
 
     position: absolute;
-    top: calc(14em + (24em / 3)); /* img top + img-size / 3 */
-    left: calc(15.5em + 24em + 2em); /* img left + img-size + 2em */
+    /* img top + img-size / 3 */
+    top: calc(14em + (24em / 3));
+    /* img left + img-size + 2em */
+    left: calc(15.5em + 24em + 2em);
 
     width: 30em;
 
     z-index: 5;
 }
 
-/* future refactor: eliminate p entirely */
 section:first-of-type:not(article section) > ul li {
-    width: auto;
-}
-
-section:first-of-type:not(article section) > ul li p {
     border-radius: 10px;
     padding: 0.4em;
+
+    width: auto;
 
     font-size: 26px;
     font-weight: bold;
@@ -229,7 +228,7 @@ ABOUT ME
 ************* */
 
 #about {
-    /* width / 2 + top position big introduction circle */
+    /* width intro div / 2 + top position big intro circle */
     margin-top: calc((37em / 2) + 4.25em);
 
     /* 3 paragraphs of 20em + button 30em */
@@ -240,7 +239,8 @@ ABOUT ME
 
 #about svg {
     position: absolute;
-    top: calc(37em / 1.5 + 3em);
+    /* same as # about + extra space */
+    top: calc(((37em / 2) + 4.25em) + 10em);
     left: 40em;
 
     z-index: 10;
@@ -263,6 +263,7 @@ ABOUT ME
 #about div > img {
     position: absolute;
 
+    /* width img / 4 + width div / 2 */
     margin: calc(12em / 4) 0 0 calc(18em / 2);
     border-radius: 5px;
 
@@ -286,10 +287,12 @@ ABOUT ME
 
     position: relative;
     top: 20em;
+    /* center with width section calc */
     left: calc(50% - ((55em + 18em + 6em) / 2));
 
     margin: 0 4em 0 2em;
 
+    /* width text + width div + width img / 2 */
     width: calc(55em + 18em + 6em);
 }
 
@@ -326,7 +329,8 @@ ABOUT ME
     border-radius: 5px;
     padding: 0.5em;
 
-    width: auto;
+    /* value has to be given so the link can be centered properly */
+    width: 17.5em;
 
     font-weight: bold;
     color: #000;
@@ -342,7 +346,8 @@ MY WORK
     left: 50%;
     transform: translateX(-50%);
 
-    width: calc(16em * 2 + 5em); /* width of two buttons + column gap */
+    /* width of two buttons + column gap */
+    width: calc(16em * 2 + 5em);
 
     z-index: 5;
 }
@@ -507,8 +512,10 @@ PROCES
 /* inspiration for timeline visual https://codepen.io/MarkBoots/pen/OJOqNyB?editors=1100 */
 
 #work-content > section:first-of-type,
-#work-content > section:last-of-type {
+#work-content > section:last-of-type,
+#cv article {
     position: relative;
+    /* width / 2 + left and right margin */
     left: calc(50% - (25em + 8em));
 
     margin: 3em 4em 0 4em;
@@ -560,7 +567,7 @@ PROCES
 
     position: absolute;
     top: 50%;
-    right: calc(100% + 2.125em);
+    left: -3.65em;
     transform: translate(50%, -50%);
 
     border-radius: 100%;
@@ -681,6 +688,7 @@ HEADER/COVER
 }
 
 #cv section:first-of-type > div {
+    /* img position + (img width - width div) */
     top: calc(4.25em + ((24em - 21.5em) / 2));
     left: calc(4em + (24em / 2));
 
@@ -702,21 +710,23 @@ CV CONTENT
     grid-template-columns: 1fr 1fr;
 
     position: absolute;
-    top: calc(30em - 2em);
-    left: calc(50% - (25em + 8em));
+    /* height img + top position img */
+    top: calc(24em + 4.25em);
 
-    margin: 3em 4em 10em 4em;
     padding-bottom: 10em;
-
-    width: 50em;
-}
-
-#cv article li:not(:first-of-type) {
-    margin-top: 0.5em;
 }
 
 #cv article section {
     margin-top: 2em;
+}
+
+#cv
+    article
+    li:not(
+        #cv article section:first-of-type section li:first-of-type,
+        #cv article section:first-of-type section:last-of-type li
+    ) {
+    margin-top: 1em;
 }
 
 /* *************
@@ -725,6 +735,7 @@ GENERAL INFORMATION
 
 #cv article > section:first-of-type {
     border-radius: 10px;
+    /* no top padding since margin top is already applied for both section */
     padding: 0em 2em 2em 2em;
 
     width: 18em;
@@ -734,12 +745,6 @@ GENERAL INFORMATION
 
 #cv article > section:first-of-type section:last-of-type ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-#cv article > section:first-of-type section:last-of-type h3 {
-    grid-column-start: 1;
-    grid-column-end: 2;
 }
 
 #cv
@@ -750,10 +755,12 @@ GENERAL INFORMATION
     margin-top: 0.75em;
 }
 
+/* text in the left column */
 #cv article > section:first-of-type section:last-of-type div:nth-of-type(odd) {
     grid-column-start: 1;
 }
 
+/* stars in the right column */
 #cv article > section:first-of-type section:last-of-type div:nth-of-type(even) {
     grid-column-start: 2;
 }
@@ -770,10 +777,6 @@ GENERAL INFORMATION
 /* *************
 WORK INFORMATION
 ************* */
-
-#cv article > section:nth-of-type(2) li {
-    margin-top: 1em;
-}
 
 #cv article > section:nth-of-type(2) p:first-of-type {
     font-weight: bold;

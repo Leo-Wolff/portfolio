@@ -1,3 +1,5 @@
+// DARK AND LIGHT THEME SWITCHING
+
 const themeSwitch = document.querySelector(
     "nav ul div:nth-of-type(2) li:nth-of-type(5)"
 )
@@ -16,6 +18,8 @@ themeSwitch.addEventListener("click", () => {
     }
 })
 
+// DUTCH TO ENGLISH LANGUAGE SWITCHING
+
 const nlSwitch = document.querySelectorAll(
     "nav ul div:nth-of-type(2) li:last-of-type span"
 )[0]
@@ -23,11 +27,16 @@ const enSwitch = document.querySelectorAll(
     "nav ul div:nth-of-type(2) li:last-of-type span"
 )[1]
 const currentPage = window.location.href
+// check
 const currentPageWithoutHash = currentPage.split("#")[0]
 const currentPageFileName =
     currentPageWithoutHash.substring(
         currentPageWithoutHash.lastIndexOf("/") + 1
     ) || "index.html"
+const currentPageFolderPath = currentPage.substring(
+    0,
+    currentPage.lastIndexOf("/")
+)
 
 console.log(currentPageFileName)
 
@@ -39,10 +48,6 @@ enSwitch.addEventListener("click", () => {
     if (currentPageFileName === "index.html" || currentPage.endsWith("/")) {
         window.location.href = "pages/en/index.html"
     } else {
-        const currentPageFolderPath = currentPage.substring(
-            0,
-            currentPage.lastIndexOf("/")
-        )
         window.location.href = `${currentPageFolderPath}/../../pages/en/${currentPageFileName}`
     }
 })
@@ -51,10 +56,6 @@ nlSwitch.addEventListener("click", () => {
     if (currentPageFileName === "index.html" || currentPage.endsWith("/")) {
         window.location.href = "../../index.html"
     } else {
-        const currentPageFolderPath = currentPage.substring(
-            0,
-            currentPage.lastIndexOf("/")
-        )
         window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentPageFileName}`
     }
 })
