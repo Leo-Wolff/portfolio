@@ -1,30 +1,36 @@
-/* variables */
-
+/* LOAD FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* *************
+VARIABLES
+************* */
 :root {
+    /* dark theme */
+    --text: #ffffff;
     --background: #1e261c;
     --background-opacity: #293127;
-    --text: #ffffff;
     --primary: #92c1c4;
     --secondary: #d5e0af;
     --accent: #b5cc78;
 
     /* fonts */
-    --primary-font: "Montserrat", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+    --primary-font: "Montserrat", "Gill Sans MT", "Trebuchet MS", sans-serif;
     --heading-font: "Alegreya", "Times New Roman", Times, serif;
 }
 
 .theme-light {
+    --text: #000000;
     --background: #e9f2e7;
     --background-opacity: #dde6db;
-    --text: #000000;
     --primary: #92c1c4;
     --secondary: #d5e0af;
     --accent: #b5cc78;
 }
+
+/* *************
+DEFAULT STYLING
+************* */
 
 *,
 *::before,
@@ -37,8 +43,8 @@
 
     width: 100%;
 
-    font-size: 24px;
     font-family: var(--primary-font);
+    font-size: 22px;
     color: var(--text);
 }
 
@@ -75,22 +81,23 @@ span {
     font-weight: bold;
 }
 
+/* *************
+MENU BAR
+************* */
+
 nav ul {
-    position: fixed;
     display: flex;
-    justify-content: space-between;
-    left: -1em;
+
+    position: fixed;
     top: -1em;
+    left: -1em;
 
     margin: 1em;
-    padding: 0;
-
-    width: 100%;
-
-    list-style: none;
-    z-index: 30;
-    background-color: var(--background);
     box-shadow: 0px 5px 10px var(--background);
+
+    background-color: var(--background);
+
+    z-index: 20;
 }
 
 nav ul div {
@@ -105,13 +112,29 @@ nav ul li {
     padding: 0.5em 0.75em 0.5em 0.75em;
 
     width: 7.5em;
+
     text-align: center;
+}
+
+.active {
+    font-weight: bold;
+    color: var(--primary);
 }
 
 nav ul li img {
     position: relative;
     left: -0.5em;
+
     width: 1.5em;
+}
+
+nav ul li span {
+    font-weight: normal;
+}
+
+nav ul li span.active {
+    font-weight: bold;
+    color: var(--text);
 }
 
 nav ul li:nth-of-type(4) a {
@@ -125,26 +148,4 @@ nav ul li:nth-of-type(4) a {
 
 nav ul li:nth-of-type(5) {
     width: 2em;
-}
-
-nav ul li span {
-    font-weight: normal;
-}
-
-nav ul li span.active {
-    font-weight: bold;
-    color: var(--text);
-}
-
-nav svg {
-    position: relative;
-    left: calc(50% - (1.5em / 2));
-
-    width: 1.5em;
-    height: 1.5em;
-}
-
-.active {
-    font-weight: bold;
-    color: var(--primary);
 }

@@ -1,9 +1,14 @@
+/* *************
+HEADER/COVER
+************* */
+
 #cv section:first-of-type > img {
     top: 4.25em;
     left: 4em;
 }
 
 #cv section:first-of-type > div {
+    /* img position + (img width - width div) */
     top: calc(4.25em + ((24em - 21.5em) / 2));
     left: calc(4em + (24em / 2));
 
@@ -16,30 +21,41 @@
     left: 9em;
 }
 
+/* *************
+CV CONTENT
+************* */
+
 #cv article {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     position: absolute;
-    top: calc(30em - 2em);
-    left: calc(50% - (25em + 8em));
+    /* height img + top position img */
+    top: calc(24em + 4.25em);
 
-    margin: 3em 4em 10em 4em;
     padding-bottom: 10em;
-
-    width: 50em;
-}
-
-#cv article li:not(:first-of-type) {
-    margin-top: 0.5em;
 }
 
 #cv article section {
     margin-top: 2em;
 }
 
+#cv
+    article
+    li:not(
+        #cv article section:first-of-type section li:first-of-type,
+        #cv article section:first-of-type section:last-of-type li
+    ) {
+    margin-top: 1em;
+}
+
+/* *************
+GENERAL INFORMATION
+************* */
+
 #cv article > section:first-of-type {
     border-radius: 10px;
+    /* no top padding since margin top is already applied for both section */
     padding: 0em 2em 2em 2em;
 
     width: 18em;
@@ -49,12 +65,6 @@
 
 #cv article > section:first-of-type section:last-of-type ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-#cv article > section:first-of-type section:last-of-type h3 {
-    grid-column-start: 1;
-    grid-column-end: 2;
 }
 
 #cv
@@ -65,10 +75,12 @@
     margin-top: 0.75em;
 }
 
+/* text in the left column */
 #cv article > section:first-of-type section:last-of-type div:nth-of-type(odd) {
     grid-column-start: 1;
 }
 
+/* stars in the right column */
 #cv article > section:first-of-type section:last-of-type div:nth-of-type(even) {
     grid-column-start: 2;
 }
@@ -82,9 +94,9 @@
     color: var(--accent);
 }
 
-#cv article > section:nth-of-type(2) li {
-    margin-top: 1em;
-}
+/* *************
+WORK INFORMATION
+************* */
 
 #cv article > section:nth-of-type(2) p:first-of-type {
     font-weight: bold;
