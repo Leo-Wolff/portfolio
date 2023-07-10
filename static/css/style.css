@@ -229,3 +229,13 @@ nav ul li span.active {
     font-weight: bold;
     color: var(--text);
 }
+
+/* *************
+MEDIA QUERIES
+************* */
+
+@media screen and (max-width: 25em) {
+    h1 {
+        font-size: 64px;
+    }
+}
