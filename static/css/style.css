@@ -13,6 +13,7 @@ VARIABLES
     --primary: #92c1c4;
     --secondary: #d5e0af;
     --accent: #b5cc78;
+    --focus: #c25a47;
 
     /* fonts */
     --primary-font: "Montserrat", "Gill Sans MT", "Trebuchet MS", sans-serif;
@@ -26,6 +27,7 @@ VARIABLES
     --primary: #92c1c4;
     --secondary: #d5e0af;
     --accent: #b5cc78;
+    --focus: #c25a47;
 }
 
 /* *************

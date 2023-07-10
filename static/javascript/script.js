@@ -59,3 +59,30 @@ nlSwitch.addEventListener("click", () => {
         window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentPageFileName}`
     }
 })
+
+// REVEAL SECTION OF PAGE WHEN SCROLLING
+
+function revealSection(selector) {
+    const revealSections = document.querySelectorAll(selector)
+
+    for (let i = 0; i < revealSections.length; i++) {
+        const section = revealSections[i]
+        const sectionTop = section.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+
+        if (sectionTop < windowHeight) {
+            section.classList.add("reveal")
+        }
+    }
+}
+
+// Call revealSection when the page is loaded and when scrolling
+window.addEventListener("load", function () {
+    revealSection("#about section")
+    revealSection("#work section")
+})
+
+window.addEventListener("scroll", function () {
+    revealSection("#about section")
+    revealSection("#work section")
+})

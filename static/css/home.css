@@ -31,6 +31,8 @@ body > section:first-of-type > div {
     filter: blur(5px);
 
     z-index: 5;
+    /* see animations, bottom of css file */
+    animation: home-circle 2s linear infinite;
 }
 
 section:first-of-type:not(article section) > h1 {
@@ -79,8 +81,8 @@ ABOUT ME
     /* width intro div / 2 + top position big intro circle */
     margin-top: calc((37em / 2) + 4.25em);
 
-    /* 3 paragraphs of 20em + button 30em */
-    height: calc(20em * 3 + 30em);
+    /* 3 paragraphs ( + link) of 25em + 2 paragraphs margin-top 4em */
+    height: calc(25em * 4 + 4em * 2);
 
     background-color: var(--background-opacity);
 }
@@ -90,8 +92,10 @@ ABOUT ME
     /* same as # about + extra space */
     top: calc(((37em / 2) + 4.25em) + 10em);
     left: 40em;
+    transform: translateY(0%);
 
     z-index: 10;
+    animation: about-arrow 3s ease-in-out infinite;
 }
 
 #about div > div {
@@ -134,7 +138,7 @@ ABOUT ME
     gap: 2em;
 
     position: relative;
-    top: 20em;
+    top: 25em;
     /* center with width section calc */
     left: calc(50% - ((55em + 18em + 6em) / 2));
 
@@ -142,6 +146,20 @@ ABOUT ME
 
     /* width text + width div + width img / 2 */
     width: calc(55em + 18em + 6em);
+
+    /* reveal animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s, transform 2s;
+}
+
+#about section:not(:first-of-type) {
+    margin-top: 4em;
+}
+
+#about section.reveal {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #about section > div:first-of-type {
@@ -170,9 +188,13 @@ ABOUT ME
 }
 
 #about a {
+    display: block;
+
     position: relative;
-    top: 25em;
+    /* top + margin-top like the other sections */
+    top: calc(25em + 8em / 1);
     left: calc(50% - 17.5em / 2);
+    transform: scale(1);
 
     border-radius: 5px;
     padding: 0.5em;
@@ -181,8 +203,20 @@ ABOUT ME
     width: 17.5em;
 
     font-weight: bold;
+    text-align: center;
     color: #000;
     background-color: var(--secondary);
+
+    transition: transform 0.3s ease;
+}
+
+#about a:hover {
+    transform: scale(1.1);
+}
+
+#about a:focus {
+    border: 5px solid var(--focus);
+    outline: none;
 }
 
 /* *************
@@ -194,8 +228,12 @@ MY WORK
     left: 50%;
     transform: translateX(-50%);
 
-    /* width of two buttons + column gap */
-    width: calc(16em * 2 + 5em);
+    margin-top: 7.5em;
+
+    /* width of two buttons + column gap + extra space for scale */
+    width: calc(16em * 2 + 2.5em + 10em);
+    /* width of two buttons + row gap + h2 top + margin-top section + margin-top #work */
+    height: calc(16em * 2 + 7.5em + 2em + 10em + 7.5em);
 
     z-index: 5;
 }
@@ -210,10 +248,39 @@ MY WORK
 #work section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 5em;
-    row-gap: 5em;
+    column-gap: 2.5em;
+    row-gap: 7.5em;
+    justify-content: center;
+    align-content: center;
 
-    margin-top: 7.5em;
+    margin-top: 10em;
+
+    width: auto;
+    height: auto;
+
+    /* reveal animation */
+    opacity: 0;
+    transform: translateY(5em);
+    transition: opacity 2s, transform 2s;
+
+    overflow: visible;
+}
+
+#work section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#work section a {
+    justify-self: center;
+
+    position: relative;
+
+    border-radius: 10px;
+
+    overflow-y: hidden;
+    width: 16em;
+    height: 16em;
 }
 
 #work section a {
@@ -223,13 +290,27 @@ MY WORK
 
     overflow-y: hidden;
     height: 16em;
+
+    transition: transform 100ms, outline 100ms linear 75ms;
+}
+
+#work section a:hover {
+    transform: scale(1.2);
+
+    outline: solid 5px var(--primary);
+}
+
+#work section a:focus {
+    transform: scale(1.2);
+
+    outline: solid 5px var(--focus);
 }
 
 #work section a p {
     position: absolute;
     bottom: 2em;
 
-    width: 14em;
+    border-radius: 10px;
 
     font-size: 28px;
     font-weight: bold;
@@ -243,7 +324,7 @@ CONTACT
 
 #contact {
     position: absolute;
-    top: 172.5em;
+    top: 205em;
 
     z-index: 5;
 }
@@ -267,6 +348,8 @@ CONTACT
     margin: 2em 2em 0 2em;
 
     text-align: center;
+
+    overflow: visible;
 }
 
 #contact ul li a {
@@ -280,6 +363,16 @@ CONTACT
     font-weight: bold;
     color: #000;
     background-color: var(--secondary);
+
+    transition: scale 3s ease;
+}
+
+#contact ul li a:hover {
+    transform: scale(1.1);
+}
+
+#contact ul li a:focus {
+    outline: solid 5px var(--focus);
 }
 
 #contact ul li span {
@@ -296,7 +389,7 @@ BACKGROUND CIRCLE
 #background-circle {
     position: absolute;
     /* top of #contact section - 20em to touch the #work section */
-    top: calc(172.5em - 20em);
+    top: calc(205em - 20em);
     height: 50em;
 
     overflow: hidden;
@@ -315,4 +408,51 @@ BACKGROUND CIRCLE
     filter: blur(2.5px);
 
     z-index: 0;
+    animation: home-circle 2s linear infinite;
+}
+
+/* *************
+ANIMATIONS
+************* */
+
+@keyframes home-circle {
+    0% {
+        border-radius: 51% 48% 51% 48%;
+
+        filter: blur(5px);
+        transform: scale(1);
+        transform: rotateZ(0deg);
+    }
+    25% {
+        border-radius: 48% 51% 48% 51%;
+
+        transform: scale(0.95);
+        filter: blur(6px);
+    }
+    50% {
+        border-radius: 51% 48% 51% 48%;
+
+        filter: blur(7px);
+    }
+    75% {
+        border-radius: 48% 51% 48% 51%;
+    }
+    100% {
+        border-radius: 51% 48% 51% 48%;
+
+        filter: blur(5px);
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes about-arrow {
+    0% {
+        top: calc(((37em / 2) + 4.25em) + 10em);
+    }
+    50% {
+        top: calc(((37em / 2) + 4.25em) + 9em);
+    }
+    100% {
+        top: calc(((37em / 2) + 4.25em) + 10em);
+    }
 }
