@@ -1,20 +1,14 @@
 // DARK AND LIGHT THEME SWITCHING
 
-const themeSwitch = document.querySelector(
-    "nav ul div:nth-of-type(2) li:nth-of-type(5)"
-)
+const themeSwitch = document.querySelector("nav ul li svg")
 
 themeSwitch.addEventListener("click", () => {
     document.body.classList.toggle("theme-light")
 
     if (document.body.classList.contains("theme-light")) {
-        document.querySelector(
-            "nav ul div:nth-of-type(2) li:nth-of-type(5) img"
-        ).src = "../../static/img/icon-theme.svg"
+        document.querySelector("nav ul li svg circle").classList.add("light")
     } else {
-        document.querySelector(
-            "nav ul div:nth-of-type(2) li:nth-of-type(5) img"
-        ).src = "../../static/img/icon-themefilled.svg"
+        document.querySelector("nav ul li svg circle").classList.remove("light")
     }
 })
 

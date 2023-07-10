@@ -111,6 +111,8 @@ nav ul div {
 }
 
 nav ul li {
+    position: relative;
+
     padding: 0.5em 0.75em 0.5em 0.75em;
 
     width: 7.5em;
@@ -123,11 +125,100 @@ nav ul li {
     color: var(--primary);
 }
 
-nav ul li img {
+nav ul li a:hover,
+nav ul li span:hover,
+nav ul li span.active:hover {
+    font-weight: bold;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+nav ul li:not(:nth-of-type(4), :nth-of-type(5), :nth-of-type(6))::after {
+    content: "";
+
+    position: absolute;
+    bottom: 100%; /* Start the line above the element */
+    left: 0;
+
+    width: 100%;
+    height: 0;
+
+    background-color: transparent;
+
+    transition: height 0.25s ease-in-out, background-color 0.25s ease-in-out,
+        bottom 0.25s ease-in-out;
+}
+
+nav ul li:hover::after {
+    bottom: 0;
+
+    height: 3px;
+
+    background-color: var(--primary);
+}
+
+nav ul li:nth-of-type(4) {
+    padding-top: 0.1em;
+}
+
+nav ul li:nth-of-type(4) a {
+    display: block;
+
+    border-radius: 10px;
+    padding: 0.5em 0.75em 0.5em 0.75em;
+
+    font-weight: bold;
+    color: var(--background);
+    background-color: var(--primary);
+}
+
+nav ul li:nth-of-type(4) a:hover {
+    transform: scale(1.1);
+
+    background-color: var(--primary);
+
+    filter: brightness(0.75);
+}
+
+/* theme switch button styling */
+
+nav ul li:nth-of-type(5) {
+    width: 2em;
+}
+
+nav ul li svg {
     position: relative;
     left: -0.5em;
 
     width: 1.5em;
+    height: 1.5em;
+}
+
+nav ul li svg circle {
+    fill: var(--text);
+    stroke: var(--text);
+}
+
+nav ul li svg circle.light {
+    fill: none;
+    stroke-width: 10px;
+}
+
+nav ul li svg path {
+    fill: var(--text);
+}
+
+nav ul li svg:hover {
+    cursor: pointer;
+}
+
+nav ul li svg:hover circle {
+    fill: var(--primary);
+    stroke: var(--primary);
+}
+
+nav ul li svg:hover path {
+    fill: var(--primary);
 }
 
 nav ul li span {
@@ -137,17 +228,4 @@ nav ul li span {
 nav ul li span.active {
     font-weight: bold;
     color: var(--text);
-}
-
-nav ul li:nth-of-type(4) a {
-    border-radius: 10px;
-    padding: 0.5em 0.75em 0.5em 0.75em;
-
-    font-weight: bold;
-    color: var(--background);
-    background-color: var(--primary);
-}
-
-nav ul li:nth-of-type(5) {
-    width: 2em;
 }
