@@ -32,6 +32,15 @@ ARTICLE
 
 #work-content > section {
     margin-top: 3em;
+
+    opacity: 0;
+    transform: translateY(5em);
+    transition: opacity 2s, transform 2s;
+}
+
+#work-content > section.reveal {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* *************
@@ -56,6 +65,9 @@ PROCES
     display: grid;
     /* 0.25em is the width of the line */
     grid-template-columns: 0.25em 1fr;
+
+    /* setting a height to avoid overflow with reveal animation */
+    height: 54em;
 }
 
 #work-content > section:first-of-type ul::before {
@@ -68,6 +80,17 @@ PROCES
     border-radius: 10px;
 
     background: var(--accent);
+}
+
+#work-content > section:first-of-type ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s, transform 2s;
+}
+
+#work-content > section:first-of-type ul li.reveal {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #work-content > section:first-of-type ul li:not(:last-of-type) {
@@ -179,12 +202,20 @@ GENERAL INFORMATION
     justify-content: center;
 
     margin: 0.5em;
+
+    overflow: visible;
 }
 
 /* change image colour when theme is changed */
 #work-content > section:nth-of-type(2) section img {
     width: 4em;
     height: 4em;
+
+    transition: transform 100ms;
+}
+
+#work-content > section:nth-of-type(2) section img:hover {
+    transform: scale(1.1);
 }
 
 /* *************
