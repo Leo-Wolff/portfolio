@@ -478,7 +478,11 @@ MEDIA QUERIES
 
     section:first-of-type:not(article section) > h1 {
         top: 2.75em;
-        left: 0.25em;
+        left: 0;
+
+        width: 100%;
+
+        text-align: center;
     }
 
     section:first-of-type:not(article section) > ul {

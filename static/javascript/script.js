@@ -1,4 +1,18 @@
 //
+// HAMBURGER MENU
+//
+
+const hamburgerMenu = document.querySelector("nav ul > div:last-of-type")
+
+hamburgerMenu.querySelector("button").addEventListener("click", () => {
+    hamburgerMenu.querySelector("div").classList.add("open")
+})
+
+hamburgerMenu.querySelector("div > svg").addEventListener("click", () => {
+    hamburgerMenu.querySelector("div").classList.remove("open")
+})
+
+//
 // DARK AND LIGHT THEME SWITCHING
 //
 
