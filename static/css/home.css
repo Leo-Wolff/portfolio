@@ -78,9 +78,13 @@ ABOUT ME
 ************* */
 
 #about {
+    position: relative;
+    left: 0;
+
     /* width intro div / 2 + top position big intro circle */
     margin-top: calc((37em / 2) + 4.25em);
 
+    /* width: 100%; */
     /* 3 paragraphs ( + link) of 25em + 2 paragraphs margin-top 4em */
     height: calc(25em * 4 + 4em * 2);
 
@@ -91,8 +95,10 @@ ABOUT ME
     position: absolute;
     /* same as # about + extra space */
     top: calc(((37em / 2) + 4.25em) + 10em);
-    left: 40em;
-    transform: translateY(0%);
+    right: 15%;
+    transform: translateX(100%);
+
+    width: 5em;
 
     z-index: 10;
     animation: about-arrow 3s ease-in-out infinite;
@@ -101,17 +107,17 @@ ABOUT ME
 #about section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    gap: 1em;
 
     position: relative;
     top: 25em;
     /* center with width section calc */
-    left: calc(50% - ((55em + 18em + 6em) / 2));
+    left: calc(50% - ((58em + 18em + 4em) / 2));
 
-    margin: 0 4em 0 2em;
+    /* width text (width extra spacing) + width div + width img / 3 */
+    width: calc(58em + 18em + 4em);
 
-    /* width text + width div + width img / 2 */
-    width: calc(55em + 18em + 6em);
+    margin: 0 1em 0 1em;
 
     /* reveal animation */
     opacity: 0;
@@ -252,6 +258,7 @@ MY WORK
     row-gap: 7.5em;
     justify-content: center;
     align-content: center;
+    justify-items: center;
 
     margin-top: 10em;
 
@@ -624,5 +631,57 @@ MEDIA QUERIES
     #background-circle {
         /* top of #contact section - 12.5em to touch the #work section */
         top: calc(265em - 12.5em);
+    }
+}
+
+@media screen and (max-width: 96em) {
+    /* *************
+    HEADER/INTRODUCTION
+    ************* */
+
+    section:first-of-type:not(article section) > img {
+        left: 12em;
+
+        width: calc(24em / 1.5);
+        height: calc(24em / 1.5);
+    }
+
+    body > section:first-of-type > div {
+        width: calc(37em / 1.5);
+        height: calc(37em / 1.5);
+    }
+
+    section:first-of-type:not(article section) > h1 {
+        left: 6em;
+    }
+
+    section:first-of-type:not(article section) > ul {
+        /* img top + img-size / 3 */
+        top: calc(14em + (calc(24em / 1.5) / 3));
+        /* img left + img-size + 2em */
+        left: calc(12em + calc(24em / 1.5) + 2em);
+    }
+
+    #about {
+        /* width intro div / 2 + top position big intro circle */
+        margin-top: calc((calc(37em / 1.5) / 2) + 4.25em);
+    }
+}
+
+@media screen and (max-width: 115em) {
+    /* *************
+    ABOUT ME
+    ************* */
+
+    #about section {
+        /* center with width section calc */
+        left: calc(50% - ((43em + 18em + 4em) / 2));
+
+        /* width text (width extra spacing) + width div + width img / 3 */
+        width: calc(43em + 18em + 4em);
+    }
+
+    #about section > div:last-of-type {
+        width: 40em;
     }
 }
