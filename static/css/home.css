@@ -1,3 +1,7 @@
+main > section {
+    width: 100vw;
+}
+
 /* *************
 HEADER/INTRODUCTION
 ************* */
@@ -5,27 +9,31 @@ HEADER/INTRODUCTION
 section:first-of-type:not(article section) > img {
     position: absolute;
     top: 14em;
-    left: 15.5em;
+    left: 15.5vw;
 
     border-radius: 20px;
     object-fit: cover;
     object-position: 0% 100%;
 
-    width: 24em;
-    height: 24em;
+    /* width: 24em;
+    height: 24em; */
+    min-width: 12em;
+    width: 24vw;
+    aspect-ratio: 1 / 1;
 
     z-index: 10;
 }
 
-body > section:first-of-type > div {
+main > section:first-of-type > div {
     position: absolute;
     top: 4.25em;
     left: 1em;
 
     border-radius: 100%;
 
-    width: 37em;
-    height: 37em;
+    min-width: calc(37em / 2 - 2em);
+    width: calc(25vw * 1.5);
+    aspect-ratio: 1 / 1;
 
     background-color: var(--primary);
     filter: blur(5px);
@@ -38,7 +46,10 @@ body > section:first-of-type > div {
 section:first-of-type:not(article section) > h1 {
     position: absolute;
     top: 2.5em;
-    left: 9em;
+
+    width: 100vw;
+
+    text-align: center;
 
     z-index: 10;
 }
@@ -51,9 +62,9 @@ section:first-of-type:not(article section) > ul {
 
     position: absolute;
     /* img top + img-size / 3 */
-    top: calc(14em + (24em / 3));
+    top: calc(14em + (24vw / 3));
     /* img left + img-size + 2em */
-    left: calc(15.5em + 24em + 2em);
+    left: calc(15.5em + 24vw + 2em);
 
     width: 30em;
 
@@ -73,6 +84,18 @@ section:first-of-type:not(article section) > ul li {
     background-color: var(--accent);
 }
 
+section:first-of-type svg {
+    position: absolute;
+    /* + width to make sure the entire arrow is always visible */
+    right: calc(5vw + 5em);
+    bottom: 5vh;
+
+    width: 5em;
+
+    z-index: 10;
+    animation: about-arrow 1.5s ease-in-out alternate infinite;
+}
+
 /* *************
 ABOUT ME
 ************* */
@@ -89,19 +112,6 @@ ABOUT ME
     height: calc(25em * 4 + 4em * 2);
 
     background-color: var(--background-opacity);
-}
-
-#about svg {
-    position: absolute;
-    /* same as # about + extra space */
-    top: calc(((37em / 2) + 4.25em) + 10em);
-    right: 15%;
-    transform: translateX(100%);
-
-    width: 5em;
-
-    z-index: 10;
-    animation: about-arrow 3s ease-in-out infinite;
 }
 
 #about section {
@@ -443,13 +453,10 @@ ANIMATIONS
 
 @keyframes about-arrow {
     0% {
-        top: calc(((37em / 2) + 4.25em) + 10em);
-    }
-    50% {
-        top: calc(((37em / 2) + 4.25em) + 9em);
+        transform: translate(100%, 0em);
     }
     100% {
-        top: calc(((37em / 2) + 4.25em) + 10em);
+        transform: translate(100%, 1em);
     }
 }
 
@@ -463,24 +470,10 @@ MEDIA QUERIES
     section:first-of-type:not(article section) > img {
         top: 12em;
         left: calc(50% - (12em / 2));
-
-        border-radius: 20px;
-        object-fit: cover;
-        object-position: 0% 100%;
-
-        width: 12em;
-        height: 12em;
-
-        z-index: 10;
     }
 
-    body > section:first-of-type > div {
-        top: 4.25em;
+    main > section:first-of-type > div {
         left: 0.75em;
-
-        /* half of the width of the original circle - left * 2 (with some extra spacing) */
-        width: calc(37em / 2 - 2em);
-        height: calc(37em / 2 - 2em);
     }
 
     section:first-of-type:not(article section) > h1 {
@@ -501,11 +494,16 @@ MEDIA QUERIES
         left: 1em;
 
         /* same as intro circle */
-        width: calc(37em / 2 - 2em);
+        width: calc(100vw - 2em);
     }
 
     section:first-of-type:not(article section) > ul li {
         font-size: 22px;
+    }
+
+    section:first-of-type svg {
+        left: 50%;
+        transform: translate(-50%, 140%);
     }
 
     /* *************
@@ -518,11 +516,6 @@ MEDIA QUERIES
 
         /* 5 paragraphs of 25em + link of 19em + 2 paragraphs margin-top 4em */
         height: calc(25em * 5 + 19em + 4em * 2);
-    }
-
-    #about svg {
-        left: 50%;
-        transform: translate(-50%, 140%);
     }
 
     #about section {
@@ -634,32 +627,32 @@ MEDIA QUERIES
     }
 }
 
-@media screen and (max-width: 96em) {
-    /* *************
-    HEADER/INTRODUCTION
-    ************* */
+@media screen and (min-width: 30em) {
+    section:first-of-type:not(article section) > h1 {
+        top: 1em;
+        left: 0;
+
+        width: 100%;
+
+        text-align: center;
+    }
 
     section:first-of-type:not(article section) > img {
-        left: 12em;
-
-        width: calc(24em / 1.5);
-        height: calc(24em / 1.5);
+        top: 12em;
+        left: calc(50% - (12em / 2));
     }
 
-    body > section:first-of-type > div {
-        width: calc(37em / 1.5);
-        height: calc(37em / 1.5);
-    }
+    main > section:first-of-type > div {
+        left: calc(50% - (37em / 2 - 2em) / 2);
 
-    section:first-of-type:not(article section) > h1 {
-        left: 6em;
+        /* width: calc(); */
     }
 
     section:first-of-type:not(article section) > ul {
-        /* img top + img-size / 3 */
-        top: calc(14em + (calc(24em / 1.5) / 3));
-        /* img left + img-size + 2em */
-        left: calc(12em + calc(24em / 1.5) + 2em);
+        gap: 1.5em;
+
+        top: calc(12em * 2 + (12em / 3) - 1.5em);
+        left: calc(50% - 30em / 2);
     }
 
     #about {
@@ -668,7 +661,102 @@ MEDIA QUERIES
     }
 }
 
-@media screen and (max-width: 115em) {
+@media screen and (min-width: 67em) {
+    /* *************
+    HEADER/INTRODUCTION
+    ************* */
+
+    /* section:first-of-type:not(article section) > img {
+        left: 12em;
+
+        width: calc(24em / 1.5);
+        height: calc(24em / 1.5);
+    }
+
+    main > section:first-of-type > div {
+        width: calc(37em / 1.5);
+        height: calc(37em / 1.5);
+    }
+
+    section:first-of-type:not(article section) > h1 {
+        left: 6em;
+    } */
+
+    /* section:first-of-type:not(article section) > ul { */
+    /* img top + img-size / 3 */
+    /* top: calc(14em + (calc(24em / 1.5) / 3)); */
+    /* img left + img-size + 2em */
+    /* left: calc(12em + calc(24em / 1.5) + 2em); */
+    /* } */
+
+    section:first-of-type:not(article section) > img {
+        position: absolute;
+        top: 14em;
+        left: 15.5vw;
+
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: 0% 100%;
+
+        /* width: 24em;
+        height: 24em; */
+        min-width: 12em;
+        width: 24vw;
+        aspect-ratio: 1 / 1;
+
+        z-index: 10;
+    }
+
+    main > section:first-of-type > div {
+        position: absolute;
+        top: 4.25em;
+        left: 1em;
+
+        border-radius: 100%;
+
+        min-width: calc(37em / 2 - 2em);
+        width: calc(25vw * 1.5);
+        aspect-ratio: 1 / 1;
+
+        background-color: var(--primary);
+        filter: blur(5px);
+
+        z-index: 5;
+        /* see animations, bottom of css file */
+        animation: home-circle 2s linear infinite;
+    }
+
+    section:first-of-type:not(article section) > h1 {
+        position: absolute;
+        top: 2.5em;
+
+        width: 100vw;
+
+        text-align: center;
+
+        z-index: 10;
+    }
+
+    section:first-of-type:not(article section) > ul {
+        /* gap: 1.5em; */
+
+        /* img top + img-size / 3 - gap */
+        top: calc(14em + (24vw / 3));
+        /* img left + img-size + 2em */
+        /* left: 1em; */
+        left: calc(12vw + 24vw + 2em);
+
+        /* same as intro circle */
+        /* width: calc(100vw - 2em); */
+    }
+
+    #about {
+        /* width intro div / 2 + top position big intro circle */
+        margin-top: calc((calc(37em / 1.5) / 2) + 4.25em);
+    }
+}
+
+@media screen and (min-width: 96em) {
     /* *************
     ABOUT ME
     ************* */
