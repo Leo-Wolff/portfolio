@@ -1,38 +1,25 @@
-# SandScript
+# Hi! I'm Leo
 
-SandScript is an app where you can put a message in a bottle and send it across the world. SandScript is all about bringing back slow and meaningful communication between others. That is why once a bottle is send the arrival time of the bottle is dependent on real-life distance between you and your match.
+[introduction]
 
-## Installation
+## About Me
 
-To install SandScript simply download the files. You can also do this quicker by cloning the entire repository. You do this by putting the following command in your CLI:
-`git clone https://github.com/Leo-Wolff/SandScript`
+### Who am I?
 
-To run the app, navigate to your files in your CLI of a choice and then once in the folder run the following command:
-`npm run start`
+As you can see, my name is Leo. I was bron in 2001 in the best family I could ever ask for. If I had to describe myself in one word it would be energy. The energy to explore, to create, to learn, and to make people happy. Silence really isn't my thing, I like to talk even if it is to myself.
 
-You can now head over to (http://localhost:8000/)[http://localhost:8000/] to open the app.
+### What is my passion?
 
-## Getting started
+Stories are mainly my biggest passion. Because of this I have hobbies such as writing, reading, playing piano, and every so often drawing. Besides being a fan of all     creative subjects, I'm also a fan of technical stuff such as mathematics and in general solving puzzles. I've found that in life I really sit in between the creative and the technical.
 
-To start using this app, make an account. You can then use that account to login and start matching with people. You can do this under 'Discover'. If you match with someone, you can write them a letter and do more as described by 'Features'.
+### How have I grown?
 
-## Features
+At the start of my life I found it quite difficult to talk to people. I got along a lot more with animals and mainly focused on that. That aspect of my life improved around halfway into my high school career. Other than that, I've mainly grown mentally. I've taught myself to regard myself more and not to constantly think of everybody else and to maintain my own productivity. It's still something I work really hard to get better at, but throughout the years I've improved a lot.
 
-Sandscript has the following features:
+## Work
 
--   Write letters and style your text.
--   Save and update drafts so your progress doesn't get lost.
--   Sign letters anonymously or with any name you prefer.
--   Add photos and trinkets to your bottle.
--   Send bottle to multiple people (publicly or with custom groups) via the campfire.
--   Set a trajectory so that you can contact people who have similar interests.
--   Bottle arrival time is dependent on real-life distance.
--   Send bottles back and forth to your matches.
+[work]
 
-## Contributors
+## Contact
 
-[Leo Kramer](https://github.com/Leo-Wolff)
-[Robin van Houten](https://github.com/robin500818167)
-[Kevin Boere](https://github.com/Kboere)
-[Enis Okic](https://github.com/enisokic)
-[Sven Doejaaren](https://github.com/svendoejaaren)
+[contact]
