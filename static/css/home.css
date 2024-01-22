@@ -87,9 +87,8 @@ section:first-of-type:not(article section) > ul li {
 section:first-of-type svg {
     position: absolute;
     /* + width to make sure the entire arrow is always visible */
-    /* right: calc(1vw + 5em); */
     right: calc(5vw + 5em);
-    bottom: 5vh;
+    top: 85vh;
 
     width: 5em;
 
@@ -106,9 +105,8 @@ ABOUT ME
     /* width intro div / 2 + top position big intro circle */
     margin-top: calc(((25vw * 1.5) / 2) + 4.25em);
 
-    width: 100vw;
     /* 3 paragraphs ( + link) of 45vh + 2 paragraphs margin-top 4em + top #about section */
-    height: calc(45vh * 4 + 4em * 2 + 25em);
+    height: calc(46vh * 4 + 4em * 2 + 25em);
 
     background-color: var(--background-opacity);
 }
@@ -124,7 +122,7 @@ ABOUT ME
     left: calc(50% - (100% / 2));
 
     width: calc(100% - 2em);
-    height: 45vh;
+    height: 46vh;
 
     margin: 0 1em 0 1em;
 
@@ -247,7 +245,6 @@ MY WORK
 #work {
     margin-top: 7.5em;
 
-    width: 100vw;
     /* height of grid + margin-top grid + extra space to account for h2 */
     height: calc(((20em * 1.2) * 2 + 2.5em) + 2em + 3em);
 
@@ -351,29 +348,31 @@ CONTACT
 ************* */
 
 #contact {
-    position: absolute;
-    top: 205em;
+    position: relative;
+    margin: 7.5em 0 15em 0;
 
     z-index: 5;
 }
 
 #contact h2 {
+    width: 100vw;
+
     text-align: center;
 }
 
 #contact ul {
     position: relative;
-    left: calc(50% - (26em / 2));
+    left: calc(50% - ((20em * 1.1) / 2));
 
-    width: 26em;
+    width: calc(20em * 1.1);
 }
 
 #contact ul li {
     position: relative;
     /* -5em to align with ul, the rest is half op li width minus 50% to properly center it */
-    left: calc(-5em + (50% - (20em / 2)));
+    /* left: calc(-5em + (50% - (20em / 2))); */
 
-    margin: 2em 2em 0 2em;
+    margin-top: 2em;
 
     text-align: center;
 
@@ -404,7 +403,7 @@ CONTACT
 }
 
 #contact ul li span {
-    display: inline-block;
+    display: block;
 
     font-weight: normal;
     color: #000;
@@ -414,28 +413,33 @@ CONTACT
 BACKGROUND CIRCLE
 ************* */
 
-#background-circle {
+main > div {
     position: absolute;
-    /* top of #contact section - 20em to touch the #work section */
-    top: calc(205em - 20em);
-    height: 50em;
+    left: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: calc(50em + 15em);
 
     overflow: hidden;
+
+    z-index: -1;
 }
 
-#background-circle div {
+main > div > div {
     position: absolute;
-    left: calc(50% - (85em / 2));
+    top: 1em;
+    left: calc(50% - 175vw / 2);
 
     border-radius: 100%;
 
-    width: 85em;
-    height: 85em;
+    width: 175vw;
+    aspect-ratio: 1 / 1;
 
     background-color: var(--background-opacity);
     filter: blur(2.5px);
 
-    z-index: 0;
+    z-index: -1;
     animation: home-circle 2s linear infinite;
 }
 
@@ -606,6 +610,36 @@ MEDIA QUERIES
 
         width: 100vw;
         height: calc((16em * 1.2) * 4 + 2.5em);
+    }
+
+    /* *************
+    CONTACT
+    ************* */
+
+    #contact ul {
+        left: calc(50% - ((15em * 1.1) / 2));
+
+        width: calc(15em * 1.1);
+    }
+
+    #contact ul li a {
+        width: 15em;
+    }
+
+    /* *************
+    BACKGROUND CIRCLE
+    ************* */
+
+    main > div {
+        height: calc(65em + 15em);
+    }
+
+    main > div > div {
+        left: calc(50% - 500vw / 2);
+
+        border-radius: 100%;
+
+        width: 500vw;
     }
 }
 
