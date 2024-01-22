@@ -262,14 +262,16 @@ MY WORK
 
 #work section {
     display: grid;
-    grid-template-columns: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
+    /* grid-template-columns: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
             calc(20em * 1.2),
             calc(20vw * 1.2)
         );
     grid-template-rows: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
             calc(20em * 1.2),
             calc(20vw * 1.2)
-        );
+        ); */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
 
     column-gap: 2.5em;
     row-gap: 2.5em;
@@ -307,8 +309,8 @@ MY WORK
 
     border-radius: 10px;
 
-    min-width: 16em;
-    width: 16vw;
+    min-width: 12em;
+    width: 20vw;
     aspect-ratio: 1 / 1;
 }
 
@@ -585,6 +587,25 @@ MEDIA QUERIES
 
     #about span {
         font-size: 18px;
+    }
+
+    /* *************
+    MY WORK
+    ************* */
+
+    #work {
+        /* height of grid + margin-top grid + extra space to account for h2 */
+        height: calc(((16em * 1.2) * 4 + 2.5em) + 2em + 3em);
+    }
+
+    #work section {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        left: 0;
+
+        width: 100vw;
+        height: calc((16em * 1.2) * 4 + 2.5em);
     }
 }
 
