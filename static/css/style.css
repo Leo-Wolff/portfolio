@@ -322,7 +322,7 @@ nav ul > div:last-of-type div > svg:hover path {
 MEDIA QUERIES
 ************* */
 
-@media screen and (max-width: 96em) {
+@media screen and (max-width: 90em) {
     nav ul > div:last-of-type {
         width: 80%;
     }

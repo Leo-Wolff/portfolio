@@ -11,7 +11,7 @@ HEADER/COVER
     object-fit: cover;
     object-position: 0% 100%;
 
-    min-width: 18em;
+    min-width: 14em;
     width: 36vw;
     aspect-ratio: 1 / 1;
 
@@ -25,7 +25,7 @@ HEADER/COVER
 
     border-radius: 100%;
 
-    min-width: 15em;
+    min-width: 16em;
     width: 30vw;
     aspect-ratio: 1 / 1;
 
@@ -33,14 +33,15 @@ HEADER/COVER
     filter: blur(5px);
 
     z-index: 5;
-    /* see animations, bottom of css file */
     animation: home-circle 2s linear infinite;
 }
 
 #cv > section:first-of-type > h1 {
     position: absolute;
-    top: 4em;
-    left: calc((36vw / 2) + 4em + 1em);
+    top: calc((36vw / 2) + 0.5em);
+    right: 0;
+
+    width: calc(100vw - 36vw - 4em + 2em);
 
     z-index: 10;
 }
@@ -51,24 +52,17 @@ CV CONTENT
 
 #cv article {
     display: grid;
-    grid-template-columns: 40% 60%;
-    column-gap: 4em;
+    grid-template-columns: 35% 1fr;
+    gap: 4em;
 
-    position: absolute;
-    /* height img + top position img */
-    top: calc(36vw + 4em);
+    position: relative;
     left: calc(50% - (75vw) / 2);
 
-    margin: 7.5em 0 15em 0;
+    margin-top: calc(36vw + 4em + 7.5em);
+    margin-bottom: 15em;
 
-    /* min-width: 50em; */
     width: 75vw;
-    /* height: 125em; */
 }
-
-/* #cv article section {
-    margin-top: 2em;
-} */
 
 #cv
     article
@@ -85,10 +79,7 @@ GENERAL INFORMATION
 
 #cv article > section:first-of-type {
     border-radius: 10px;
-    /* no top padding since margin top is already applied for both section */
-    padding: 0em 2em 2em 2em;
-
-    /* width: 18em; */
+    padding: 2em 1.5em 2em 1.5em;
 
     background-color: var(--background-opacity);
 }
@@ -128,7 +119,104 @@ GENERAL INFORMATION
 WORK INFORMATION
 ************* */
 
-#cv article > section:nth-of-type(2) p:first-of-type {
+#cv article > section:last-of-type {
+    width: 100%;
+}
+
+#cv article > section:last-of-type section:last-of-type {
+    margin-top: 2em;
+}
+
+#cv article > section:last-of-type p:first-of-type {
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* *************
+MEDIA QUERIES
+************* */
+
+@media screen and (max-width: 90em) {
+    #cv article {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 67em) {
+    /* *************
+    HEADER/COVER
+    ************* */
+
+    #cv > section:first-of-type > img {
+        position: absolute;
+        top: 4em;
+        left: calc(50% - (14em) / 2);
+
+        width: 14em;
+    }
+
+    #cv > section:first-of-type > div {
+        top: calc((14em / 2));
+        left: calc(50% - (16em / 2));
+    }
+
+    #cv > section:first-of-type > h1 {
+        top: calc((14em / 2) - 1em);
+
+        width: 100vw;
+
+        text-align: center;
+    }
+
+    /* *************
+    CV CONTENT
+    ************* */
+
+    #cv article {
+        grid-template-columns: 1fr;
+
+        left: calc(50% - (90vw) / 2);
+
+        margin-top: calc(14em + 4em + 7.5em);
+
+        width: 90vw;
+    }
+
+    #cv article > section:first-of-type {
+        justify-self: center;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #cv article > section:first-of-type > section:first-of-type,
+    #cv article > section:first-of-type > section:nth-of-type(2) {
+        grid-column-start: 1;
+    }
+
+    #cv article > section:first-of-type > section:last-of-type {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    #cv article li {
+        font-size: 18px;
+    }
+
+    #cv article li span {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 45em) {
+    #cv article > section:first-of-type {
+        display: inline-block;
+
+        width: 20em;
+    }
+
+    #cv article > section:last-of-type p {
+        max-width: 80%;
+    }
 }

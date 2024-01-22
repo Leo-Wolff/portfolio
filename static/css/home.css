@@ -10,7 +10,7 @@
 HEADER/INTRODUCTION
 ************* */
 
-#home > img {
+#home > main > section:first-of-type > img {
     position: absolute;
     top: 14em;
     left: 15.5vw;
@@ -26,7 +26,7 @@ HEADER/INTRODUCTION
     z-index: 10;
 }
 
-#home > section:first-of-type > div {
+#home > main > section:first-of-type > div {
     position: absolute;
     top: 4.25em;
     left: 1em;
@@ -45,7 +45,7 @@ HEADER/INTRODUCTION
     animation: home-circle 2s linear infinite;
 }
 
-#home > h1 {
+#home h1 {
     position: absolute;
     top: 2.5em;
 
@@ -56,7 +56,7 @@ HEADER/INTRODUCTION
     z-index: 10;
 }
 
-section:first-of-type:not(article section) > ul {
+#home > main > section:first-of-type > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -73,7 +73,7 @@ section:first-of-type:not(article section) > ul {
     z-index: 5;
 }
 
-section:first-of-type:not(article section) > ul li {
+#home > main > section:first-of-type > ul li {
     border-radius: 10px;
     padding: 0.4em;
 
@@ -86,7 +86,7 @@ section:first-of-type:not(article section) > ul li {
     background-color: var(--accent);
 }
 
-section:first-of-type svg {
+#home > main > section:first-of-type svg {
     position: absolute;
     /* + width to make sure the entire arrow is always visible */
     right: calc(5vw + 5em);
