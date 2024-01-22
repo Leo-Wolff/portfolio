@@ -333,6 +333,10 @@ MEDIA QUERIES
         font-size: 64px;
     }
 
+    p {
+        font-size: 18px;
+    }
+
     nav ul div:first-of-type {
         width: auto;
     }
@@ -472,6 +476,3 @@ MEDIA QUERIES
         font-size: 32px;
     }
 }
-
-/* @media screen and (max-width: 25em) {
-} */
