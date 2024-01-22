@@ -51,8 +51,6 @@ DEFAULT STYLING
 }
 
 body {
-    position: relative;
-
     width: 100vw;
 
     background-color: var(--background);

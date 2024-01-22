@@ -1,4 +1,8 @@
-main > section {
+#home {
+    position: relative;
+}
+
+#home > main > section {
     width: 100vw;
 }
 
@@ -6,7 +10,7 @@ main > section {
 HEADER/INTRODUCTION
 ************* */
 
-section:first-of-type:not(article section) > img {
+#home > img {
     position: absolute;
     top: 14em;
     left: 15.5vw;
@@ -15,8 +19,6 @@ section:first-of-type:not(article section) > img {
     object-fit: cover;
     object-position: 0% 100%;
 
-    /* width: 24em;
-    height: 24em; */
     min-width: 12em;
     width: 24vw;
     aspect-ratio: 1 / 1;
@@ -24,7 +26,7 @@ section:first-of-type:not(article section) > img {
     z-index: 10;
 }
 
-main > section:first-of-type > div {
+#home > section:first-of-type > div {
     position: absolute;
     top: 4.25em;
     left: 1em;
@@ -43,7 +45,7 @@ main > section:first-of-type > div {
     animation: home-circle 2s linear infinite;
 }
 
-section:first-of-type:not(article section) > h1 {
+#home > h1 {
     position: absolute;
     top: 2.5em;
 

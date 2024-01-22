@@ -50,8 +50,7 @@ PROCES
 /* inspiration for timeline visual https://codepen.io/MarkBoots/pen/OJOqNyB?editors=1100 */
 
 #work-content > section:first-of-type,
-#work-content > section:last-of-type,
-#cv article {
+#work-content > section:last-of-type {
     position: relative;
     /* width / 2 + left and right margin */
     left: calc(50% - (25em + 8em));
