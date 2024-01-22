@@ -245,47 +245,48 @@ MY WORK
 ************* */
 
 #work {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
     margin-top: 7.5em;
 
-    /* width of two buttons + column gap + extra space for scale */
-    width: calc(16em * 2 + 2.5em + 10em);
-    /* width of two buttons + row gap + h2 top + margin-top section + margin-top #work */
-    height: calc(16em * 2 + 7.5em + 2em + 10em + 7.5em);
+    width: 100vw;
+    /* height of grid + margin-top grid + extra space to account for h2 */
+    height: calc(((20em * 1.2) * 2 + 2.5em) + 2em + 3em);
 
     z-index: 5;
 }
 
 #work h2 {
-    position: relative;
-    top: 2em;
-
     text-align: center;
+
+    width: 100vw;
 }
 
 #work section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
+            calc(20em * 1.2),
+            calc(20vw * 1.2)
+        );
+    grid-template-rows: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
+            calc(20em * 1.2),
+            calc(20vw * 1.2)
+        );
+
     column-gap: 2.5em;
-    row-gap: 7.5em;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
+    row-gap: 2.5em;
 
-    margin-top: 10em;
+    position: relative;
+    left: calc(50% - ((20em * 1.2) * 2 + 2.5em) / 2);
 
-    width: auto;
-    height: auto;
+    margin-top: 2em;
+
+    /* width of two buttons + column gap + extra space for scale */
+    width: calc((20em * 1.2) * 2 + 2.5em);
+    height: calc((20em * 1.2) * 2 + 2.5em);
 
     /* reveal animation */
     opacity: 0;
     transform: translateY(5em);
     transition: opacity 2s, transform 2s;
-
-    overflow: visible;
 }
 
 #work section.reveal {
@@ -296,13 +297,19 @@ MY WORK
 #work section a {
     position: relative;
 
+    justify-self: center;
+    align-self: center;
+
+    /* Added display:flex for easier centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 10px;
 
-    overflow-y: hidden;
-    width: 16em;
-    height: 16em;
-
-    transition: transform 100ms, outline 100ms linear 75ms;
+    min-width: 16em;
+    width: 16vw;
+    aspect-ratio: 1 / 1;
 }
 
 #work section a:hover {
@@ -317,11 +324,19 @@ MY WORK
     outline: solid 5px var(--focus);
 }
 
-#work section a p {
-    position: absolute;
-    bottom: 2em;
+#work section a img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
 
-    border-radius: 10px;
+#work section a p {
+    align-self: flex-end;
+
+    position: absolute;
+
+    padding: 1em 1em 2em 1em;
+
+    width: 100%;
 
     font-size: 28px;
     font-weight: bold;
