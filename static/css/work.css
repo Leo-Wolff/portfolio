@@ -33,20 +33,22 @@ ARTICLE
     margin: 0 4em 15em 4em;
 
     width: calc(100vw - 8em);
+
+    overflow: visible;
 }
 
 #work-content > article > section {
     margin-top: 3em;
 
-    /* opacity: 0;
+    opacity: 0;
     transform: translateY(5em);
-    transition: opacity 2s, transform 2s; */
+    transition: opacity 2s, transform 2s;
 }
 
-/* #work-content > article > section.reveal {
+#work-content > article > section.reveal {
     opacity: 1;
     transform: translateY(0);
-} */
+}
 
 /* *************
 PROCESS
@@ -59,7 +61,12 @@ PROCESS
     width: calc(100% - 8em);
 }
 
-/* #work-content > article > section:first-of-type ul li {
+#work-content > article > section:first-of-type,
+#work-content > article > section:first-of-type ul {
+    overflow: visible;
+}
+
+#work-content > article > section:first-of-type ul li {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 2s, transform 2s;
@@ -68,7 +75,7 @@ PROCESS
 #work-content > article > section:first-of-type ul li.reveal {
     opacity: 1;
     transform: translateY(0);
-} */
+}
 
 #work-content > article > section:first-of-type ul li:not(:first-of-type) {
     margin-top: 2em;

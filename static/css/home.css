@@ -250,6 +250,8 @@ MY WORK
     /* height of grid + margin-top grid + extra space to account for h2 */
     height: calc(((20em * 1.2) * 2 + 2.5em) + 2em + 3em);
 
+    overflow: visible;
+
     z-index: 5;
 }
 
@@ -261,17 +263,8 @@ MY WORK
 
 #work section {
     display: grid;
-    /* grid-template-columns: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
-            calc(20em * 1.2),
-            calc(20vw * 1.2)
-        );
-    grid-template-rows: minmax(calc(20em * 1.2), calc(20vw * 1.2)) minmax(
-            calc(20em * 1.2),
-            calc(20vw * 1.2)
-        ); */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-
     column-gap: 2.5em;
     row-gap: 2.5em;
 
