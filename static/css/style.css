@@ -337,6 +337,10 @@ MEDIA QUERIES
         font-size: 18px;
     }
 
+    span {
+        font-size: 18px;
+    }
+
     nav ul div:first-of-type {
         width: auto;
     }

@@ -79,7 +79,7 @@ PROCESS
 #work-content > article > section:last-of-type div img {
     float: left;
 
-    margin: 0 1em 0 0;
+    margin: 0 1em 0.5em 0;
 }
 
 #work-content > article > section:first-of-type li div img {
@@ -87,8 +87,14 @@ PROCESS
 
     object-fit: cover;
 
+    min-width: 9em;
     width: 18vw;
     aspect-ratio: 1 / 1;
+}
+
+#work-content > article > section:first-of-type li p,
+#work-content > article > section:last-of-type div p {
+    overflow-x: visible;
 }
 
 /* *************
@@ -98,16 +104,19 @@ GENERAL INFORMATION
 #work-content > article > section:nth-of-type(2) {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     gap: 1em;
 
     width: 100%;
 }
 
 #work-content > article > section:nth-of-type(2) section {
+    flex-grow: 1;
+
     border-radius: 10px;
     padding: 2em;
 
-    width: 25vw;
+    width: 18em;
     height: auto;
 
     background-color: var(--background-opacity);
@@ -151,6 +160,9 @@ REFLECTION
     border-radius: 5px;
     padding: 1em 1em 2em 1em;
 
+    min-width: 9em;
+    width: 18vw;
+
     background-color: #fff;
 }
 
@@ -169,4 +181,55 @@ IMG POSITIONING - INDIVIDUAL PAGES
 
 #sandscript article > section:first-of-type li:last-of-type img {
     object-position: 0% 5%;
+}
+
+/* *************
+MEDIA QUERIES
+************* */
+
+@media screen and (max-width: 67em) {
+    /* *************
+    HEADER/COVER IMAGE
+    ************* */
+
+    #work-content > section:first-of-type > h1 {
+        font-size: 64px;
+    }
+}
+
+@media screen and (max-width: 45em) {
+    /* *************
+    ARTICLE
+    ************* */
+
+    #work-content > article {
+        margin: 0 1em 15em 1em;
+
+        width: calc(100vw - 2em);
+    }
+
+    /* *************
+    PROCESS
+    ************* */
+
+    #work-content > article > section:first-of-type,
+    #work-content > article > section:last-of-type {
+        margin: 3em 1em 0 1em;
+
+        width: calc(100% - 2em);
+    }
+}
+
+@media screen and (max-width: 27em) {
+    #work-content > article > section:first-of-type li div,
+    #work-content > article > section:last-of-type div img {
+        float: none;
+    }
+
+    #work-content > article > section:first-of-type li div img,
+    #work-content > article > section:last-of-type div img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
