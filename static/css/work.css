@@ -2,15 +2,22 @@
 HEADER/COVER IMAGE
 ************* */
 
-header > img {
+#work-content > section:first-of-type {
+    position: relative;
+}
+
+#work-content > section:first-of-type > img {
     object-fit: cover;
 
+    width: 100vw;
     height: 24em;
 }
 
-header h1 {
+#work-content > section:first-of-type > h1 {
     position: absolute;
-    top: 5.5em;
+    bottom: 1em;
+
+    width: 100vw;
 
     font-family: var(--text-font-main);
     font-size: 72px;
@@ -22,217 +29,144 @@ header h1 {
 ARTICLE
 ************* */
 
-#work-content {
-    margin: 0 4em 0 4em;
+#work-content > article {
+    margin: 0 4em 15em 4em;
+
+    width: calc(100vw - 8em);
 }
 
-#work-content h3 {
-    font-size: 36px;
-}
-
-#work-content > section {
+#work-content > article > section {
     margin-top: 3em;
 
-    opacity: 0;
+    /* opacity: 0;
     transform: translateY(5em);
-    transition: opacity 2s, transform 2s;
+    transition: opacity 2s, transform 2s; */
 }
 
-#work-content > section.reveal {
+/* #work-content > article > section.reveal {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
 /* *************
-PROCES
+PROCESS
 ************* */
 
-/* inspiration for timeline visual https://codepen.io/MarkBoots/pen/OJOqNyB?editors=1100 */
-
-#work-content > section:first-of-type,
-#work-content > section:last-of-type {
-    position: relative;
-    /* width / 2 + left and right margin */
-    left: calc(50% - (25em + 8em));
-
+#work-content > article > section:first-of-type,
+#work-content > article > section:last-of-type {
     margin: 3em 4em 0 4em;
 
-    width: 50em;
+    width: calc(100% - 8em);
 }
 
-#work-content > section:first-of-type ul {
-    display: grid;
-    /* 0.25em is the width of the line */
-    grid-template-columns: 0.25em 1fr;
-
-    /* setting a height to avoid overflow with reveal animation */
-    height: 54em;
-}
-
-#work-content > section:first-of-type ul::before {
-    content: "";
-
-    /* start on row 1 and span for 10 rows (max paragraphs for an article are 10)  */
-    grid-row: 1 / span 10;
-
-    margin-left: 1em;
-    border-radius: 10px;
-
-    background: var(--accent);
-}
-
-#work-content > section:first-of-type ul li {
+/* #work-content > article > section:first-of-type ul li {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 2s, transform 2s;
-}
+} */
 
-#work-content > section:first-of-type ul li.reveal {
+/* #work-content > article > section:first-of-type ul li.reveal {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
-#work-content > section:first-of-type ul li:not(:last-of-type) {
-    margin-bottom: 2em;
-}
-
-#work-content > section:first-of-type ul li div {
-    position: relative;
-
-    overflow: visible;
+#work-content > article > section:first-of-type ul li:not(:first-of-type) {
+    margin-top: 2em;
 }
 
 /* text wrapping */
-#work-content > section:first-of-type li div,
-#work-content > section:last-of-type div img {
+#work-content > article > section:first-of-type li div,
+#work-content > article > section:last-of-type div img {
     float: left;
 
-    margin: 0 1em 0 3em;
-
-    width: 12em;
+    margin: 0 1em 0 0;
 }
 
-/* circles on the timeline */
-#work-content > section:first-of-type ul li div::after {
-    content: "";
-
-    position: absolute;
-    top: 50%;
-    left: -3.65em;
-    transform: translate(50%, -50%);
-
-    border-radius: 100%;
-
-    width: 1.5em;
-    height: 1.5em;
-
-    background: var(--secondary);
-}
-
-#work-content > section:first-of-type ul li div img {
+#work-content > article > section:first-of-type li div img {
     border-radius: 5px;
 
     object-fit: cover;
 
-    width: 12em;
-    height: 12em;
-}
-
-#work-content > section:first-of-type ul li:nth-of-type(2) img {
-    object-fit: none;
-    object-position: 17.5% 10%;
-}
-
-#work-content > section:first-of-type ul li:last-of-type img {
-    object-position: 0% 5%;
-}
-
-#work-content > section:first-of-type ul li:nth-of-type(3) div,
-#work-content > section:first-of-type ul li:nth-of-type(4) div {
-    width: auto;
-}
-
-#work-content > section:first-of-type p,
-#work-content > section:last-of-type p {
-    overflow: visible;
+    width: 18vw;
+    aspect-ratio: 1 / 1;
 }
 
 /* *************
 GENERAL INFORMATION
 ************* */
 
-#work-content > section:nth-of-type(2) {
+#work-content > article > section:nth-of-type(2) {
     display: flex;
     justify-content: space-around;
     gap: 1em;
 
-    /* create margin effect of 5em */
-    width: calc(100% - 10em);
+    width: 100%;
 }
 
-#work-content > section:nth-of-type(2) section {
+#work-content > article > section:nth-of-type(2) section {
     border-radius: 10px;
     padding: 2em;
 
-    width: 18em;
+    width: 25vw;
     height: auto;
 
     background-color: var(--background-opacity);
 }
 
-#work-content > section:nth-of-type(2) p {
+#work-content > article > section:nth-of-type(2) p {
     margin-top: -0.75em;
 
     white-space: pre-line;
 }
 
-#work-content > section:nth-of-type(2) section:nth-of-type(2) div {
+#work-content > article > section:nth-of-type(2) section:nth-of-type(2) div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5em;
 
     margin-top: 1em;
-}
-
-#work-content > section:nth-of-type(2) section:nth-of-type(2) div a {
-    /* a third because only a max of 3 a allowed -1em for spacing */
-    flex-basis: calc(33.33% - 1em);
-    display: flex;
-    justify-content: center;
-
-    margin: 0.5em;
 
     overflow: visible;
 }
 
-/* change image colour when theme is changed */
-#work-content > section:nth-of-type(2) section img {
-    width: 4em;
-    height: 4em;
-
+#work-content > article > section:nth-of-type(2) section a {
     transition: transform 100ms;
 }
 
-#work-content > section:nth-of-type(2) section img:hover {
+#work-content > article > section:nth-of-type(2) section a:hover {
     transform: scale(1.1);
+}
+
+#work-content > article > section:nth-of-type(2) section img {
+    width: 4em;
+    height: 4em;
 }
 
 /* *************
 REFLECTION
 ************* */
 
-#work-content > section:last-of-type {
-    margin-bottom: 10em;
-}
-
-#work-content > section:last-of-type div img {
-    margin-left: 0;
+#work-content > article > section:last-of-type div img {
     border-radius: 5px;
     padding: 1em 1em 2em 1em;
 
     background-color: #fff;
 }
 
-#work-content > section:last-of-type br {
+#work-content > article > section:last-of-type p {
     margin-bottom: 0.75em;
+}
+
+/* *************
+IMG POSITIONING - INDIVIDUAL PAGES
+************* */
+
+#sandscript article > section:first-of-type li:nth-of-type(2) img {
+    object-fit: none;
+    object-position: 17.5% 10%;
+}
+
+#sandscript article > section:first-of-type li:last-of-type img {
+    object-position: 0% 5%;
 }
