@@ -82,11 +82,21 @@ const currentPage =
         currentPageWithoutHash.lastIndexOf("/") + 1
     ) || "index.html"
 
+const URLWithoutPage = currentURL.substring(0, currentURL.lastIndexOf("/"))
+
 // take the entire string until the last occurence of /, this way you have url without the current page file
-const currentPageFolderPath = currentURL.substring(
+const currentYear =
+    URLWithoutPage.substring(URLWithoutPage.lastIndexOf("/") + 1) ||
+    "index.html"
+
+const currentPageFolderPath = URLWithoutPage.substring(
     0,
-    currentURL.lastIndexOf("/")
+    URLWithoutPage.lastIndexOf("/")
 )
+
+console.log("currentPage", currentPage)
+console.log("currentYear", currentYear)
+console.log("currentPageFolderPath", currentPageFolderPath)
 
 enSwitch.addEventListener("click", () => {
     // if you already on the english index.html page, don't redirect
@@ -97,7 +107,7 @@ enSwitch.addEventListener("click", () => {
         window.location.href = "pages/en/index.html"
     } else {
         // go to the current page folder path, go back twice and then navigate back to the english version. This is to avoid the path getting doubled
-        window.location.href = `${currentPageFolderPath}/../../pages/en/${currentPage}`
+        window.location.href = `${currentPageFolderPath}/../../pages/en/${currentYear}/${currentPage}`
     }
 })
 
@@ -105,7 +115,7 @@ nlSwitch.addEventListener("click", () => {
     if (currentPage === "index.html" || currentURL.endsWith("/")) {
         window.location.href = "../../index.html"
     } else {
-        window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentPage}`
+        window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentYear}/${currentPage}`
     }
 })
 
