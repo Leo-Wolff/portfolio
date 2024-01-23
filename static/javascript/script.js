@@ -131,14 +131,14 @@ const revealSection = (selector) => {
 
 window.addEventListener("load", () => {
     revealSection("#about section")
-    revealSection("#work section > article")
+    revealSection("#work section")
     revealSection("#work-content > article > section:first-of-type ul li")
     revealSection("#work-content > article > section")
 })
 
 window.addEventListener("scroll", () => {
     revealSection("#about section")
-    revealSection("#work section > article")
+    revealSection("#work section")
     revealSection("#work-content > article > section:first-of-type ul li")
     revealSection("#work-content > article > section")
 })
