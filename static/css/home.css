@@ -500,16 +500,16 @@ MEDIA QUERIES
     HEADER/INTRODUCTION
     ************* */
 
-    section:first-of-type:not(article section) > img {
+    #home > main > section:first-of-type > img {
         top: 12em;
         left: calc(50% - (12em / 2));
     }
 
-    main > section:first-of-type > div {
+    #home > main > section:first-of-type > div {
         left: calc(50% - (37em / 2 - 2em) / 2);
     }
 
-    section:first-of-type:not(article section) > ul {
+    #home > main > section:first-of-type > ul {
         gap: 1.5em;
 
         /* img top + img-size / 3 - gap */
@@ -519,11 +519,11 @@ MEDIA QUERIES
         width: calc(100vw - 2em);
     }
 
-    section:first-of-type:not(article section) > ul li {
+    #home > main > section:first-of-type > ul li {
         font-size: 22px;
     }
 
-    section:first-of-type svg {
+    #home > main > section:first-of-type svg {
         right: 4em;
     }
 
