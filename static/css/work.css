@@ -183,12 +183,26 @@ IMG POSITIONING - INDIVIDUAL PAGES
     object-position: 0% 5%;
 }
 
+/* year 3 */
+
+#bear article > section:first-of-type li:nth-of-type(2) img {
+    object-position: 0% 42.5%;
+}
+
 #dreaming article > section:first-of-type li:nth-of-type(2) img {
     object-position: 0% 20%;
 }
 
 #dreaming article > section:first-of-type li:nth-of-type(3) img {
     object-position: 12.5% 0%;
+}
+
+#mythic article > section:first-of-type li:nth-of-type(4) img {
+    object-position: 0% 0%;
+}
+
+#tolkien article > section:first-of-type li:nth-of-type(2) img {
+    object-position: 0% 0%;
 }
 
 /* *************
