@@ -103,8 +103,11 @@ enSwitch.addEventListener("click", () => {
     if (currentURL.includes("pages/en/index.html")) {
         return
     }
+
     if (currentPage === "index.html" || currentURL.endsWith("/")) {
         window.location.href = "pages/en/index.html"
+    } else if (currentYear === "nl" || currentYear === "en") {
+        window.location.href = `${currentPageFolderPath}/../../pages/en/${currentPage}`
     } else {
         // go to the current page folder path, go back twice and then navigate back to the english version. This is to avoid the path getting doubled
         window.location.href = `${currentPageFolderPath}/../../pages/en/${currentYear}/${currentPage}`
@@ -114,6 +117,8 @@ enSwitch.addEventListener("click", () => {
 nlSwitch.addEventListener("click", () => {
     if (currentPage === "index.html" || currentURL.endsWith("/")) {
         window.location.href = "../../index.html"
+    } else if (currentYear === "nl" || currentYear === "en") {
+        window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentPage}`
     } else {
         window.location.href = `${currentPageFolderPath}/../../pages/nl/${currentYear}/${currentPage}`
     }
