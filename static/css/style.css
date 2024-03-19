@@ -85,6 +85,10 @@ span {
     font-weight: bold;
 }
 
+.theme-light .icon {
+    filter: invert();
+}
+
 /* *************
 MENU BAR
 ************* */

@@ -181,6 +181,12 @@ REFLECTION
 IMG POSITIONING - INDIVIDUAL PAGES
 ************* */
 
+/* year 2 */
+
+#buddy section:first-of-type img {
+    object-position: 0% 0%;
+}
+
 #sandscript article > section:first-of-type li:nth-of-type(2) img {
     object-fit: none;
     object-position: 17.5% 10%;
